@@ -26,8 +26,10 @@ CREATE TABLE Lecturer (
 
 --  Course Table
 CREATE TABLE Course (
-    CourseCode VARCHAR(10) PRIMARY KEY, 
+    CourseID INT AUTO_INCREMENT PRIMARY KEY
+    CourseCode VARCHAR(20), 
     CourseName VARCHAR(255) NOT NULL,
+    LecturerID INT NOT NULL,
     AdminID INT NOT NULL, -- The Admin responsible for managing the course setup
     FOREIGN KEY (AdminID) REFERENCES Admin(AdminID) ON DELETE RESTRICT -- Prevent deleting an Admin if they manage courses
 );
@@ -122,4 +124,12 @@ CREATE TABLE Grade (
     Score DECIMAL(5, 2), -- e.g., Allows scores like 95.50 or 100.00
     FOREIGN KEY (SubmissionID) REFERENCES Submission(SubmissionID) ON DELETE CASCADE, -- If Submission deleted, grade is irrelevant
     FOREIGN KEY (LecturerID) REFERENCES Lecturer(LecturerID) ON DELETE RESTRICT -- Prevent deleting lecturer if they have graded submissions (or SET NULL)
+);
+CREATE TABLE Enrol (
+    CourseCode varchar(255) NOT NULL,
+    UserID int NOT NULL, 
+    PRIMARY KEY (CourseCode, UserID),
+	FOREIGN KEY (UserID) REFERENCES Student(UserID),
+	FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode)
+
 );
