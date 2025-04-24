@@ -1,3 +1,4 @@
+-- Active: 1739830206872@@127.0.0.1@3306@dbproj
 --  User Table (Generalization)
 CREATE TABLE User (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,8 +27,8 @@ CREATE TABLE Lecturer (
 
 --  Course Table
 CREATE TABLE Course (
-    CourseID INT AUTO_INCREMENT PRIMARY KEY
-    CourseCode VARCHAR(20), 
+    CourseID INT AUTO_INCREMENT PRIMARY KEY,
+    CourseCode VARCHAR(20) NOT NUll, 
     CourseName VARCHAR(255) NOT NULL,
     LecturerID INT NOT NULL,
     AdminID INT NOT NULL, -- The Admin responsible for managing the course setup
@@ -39,8 +40,8 @@ CREATE TABLE Assignment (
     AssignmentID INT AUTO_INCREMENT PRIMARY KEY,
     CourseCode VARCHAR(10) NOT NULL,
     Content TEXT, 
-    DueDate DATETIME,
-    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Assignments
+    DueDate DATETIME
+    -- FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Assignments
 );
 
 -- CalendarEvents Table
@@ -49,17 +50,17 @@ CREATE TABLE CalendarEvents (
     CourseCode VARCHAR(10) NOT NULL,
     EventName VARCHAR(255) NOT NULL,
     EventDate DATETIME NOT NULL,
-    CreatedBy INT NOT NULL, -- UserID of the person who created the event
-    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE, -- If Course is deleted, delete its Events
-    FOREIGN KEY (CreatedBy) REFERENCES User(UserID) ON DELETE RESTRICT -- Keep event even if user deleted? Or SET NULL? RESTRICT is safer.
+    CreatedBy INT NOT NULL -- UserID of the person who created the event
+    -- FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE, -- If Course is deleted, delete its Events
+    -- FOREIGN KEY (CreatedBy) REFERENCES User(UserID) ON DELETE RESTRICT -- Keep event even if user deleted? Or SET NULL? RESTRICT is safer.
 );
 
 -- DiscussionForum Table
 CREATE TABLE DiscussionForum (
     ForumID INT AUTO_INCREMENT PRIMARY KEY,
     CourseCode VARCHAR(10) NOT NULL,
-    ForumName VARCHAR(255) NOT NULL,
-    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Forums
+    ForumName VARCHAR(255) NOT NULL
+    -- FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Forums
 );
 
 -- DiscussionThread Table
@@ -68,9 +69,9 @@ CREATE TABLE DiscussionThread (
     ForumID INT NOT NULL,
     ThreadTitle VARCHAR(255) NOT NULL,
     Content TEXT,
-    CreatedBy INT NOT NULL, -- UserID of the thread creator
-    FOREIGN KEY (ForumID) REFERENCES DiscussionForum(ForumID) ON DELETE CASCADE, -- If Forum is deleted, delete its Threads
-    FOREIGN KEY (CreatedBy) REFERENCES User(UserID) ON DELETE RESTRICT -- Or SET NULL if user deleted
+    CreatedBy INT NOT NULL -- UserID of the thread creator
+    -- FOREIGN KEY (ForumID) REFERENCES DiscussionForum(ForumID) ON DELETE CASCADE, -- If Forum is deleted, delete its Threads
+    -- FOREIGN KEY (CreatedBy) REFERENCES User(UserID) ON DELETE RESTRICT -- Or SET NULL if user deleted
 );
 
 --  Reply Table
@@ -90,8 +91,8 @@ CREATE TABLE Reply (
 CREATE TABLE Section (
     SectionID INT AUTO_INCREMENT PRIMARY KEY,
     CourseCode VARCHAR(10) NOT NULL,
-    SectionTitle VARCHAR(255) NOT NULL,
-    FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Sections
+    SectionTitle VARCHAR(255) NOT NULL
+    -- FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode) ON DELETE CASCADE -- If Course is deleted, delete its Sections
 );
 
 --  SectionItem Table (Content within a Section)
@@ -101,8 +102,8 @@ CREATE TABLE SectionItem (
     ItemTitle VARCHAR(255) NOT NULL,
     Link VARCHAR(2083), -- For external links
     Filename VARCHAR(255), -- For uploaded files
-    Description TEXT,
-    FOREIGN KEY (SectionID) REFERENCES Section(SectionID) ON DELETE CASCADE -- If Section is deleted, delete its Items
+    Description TEXT
+    -- FOREIGN KEY (SectionID) REFERENCES Section(SectionID) ON DELETE CASCADE -- If Section is deleted, delete its Items
 );
 
 --  Submission Table (Associative Entity for Student+Assignment)
@@ -129,7 +130,7 @@ CREATE TABLE Enrol (
     CourseCode varchar(255) NOT NULL,
     UserID int NOT NULL, 
     PRIMARY KEY (CourseCode, UserID),
-	FOREIGN KEY (UserID) REFERENCES Student(UserID),
-	FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode)
+	FOREIGN KEY (UserID) REFERENCES User(UserID)
+	-- FOREIGN KEY (CourseCode) REFERENCES Course(CourseCode)
 
 );
