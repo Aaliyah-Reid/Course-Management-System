@@ -3,7 +3,7 @@ from flask_cors import CORS
 import mysql.connector
 from dotenv import load_dotenv
 import os
-import bcrypt #guys the for added security we can hash the password 
+# import bcrypt #guys the for added security we can hash the password 
 
 # Load environment variables
 load_dotenv()
@@ -30,6 +30,10 @@ def get_db_connection():
         print(f"Error connecting to database: {err}")
         return None
     
+@app.route('/test',methods=['GET'])
+def test():
+    conn= get_db_connection
+    return "didn't fail"
 
 @app.route('/register', methods=['POST'])
 def register_user():
