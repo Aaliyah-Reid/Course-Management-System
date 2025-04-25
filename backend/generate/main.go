@@ -229,7 +229,7 @@ func createCourses(adminID int) {
 
 func generateUserQuery() string {
 	query := "INSERT INTO User (UserID , FirstName , LastName , Password) VALUES\n"
-	for i := range 100000 {
+	for i := range 100040 {
 		UserID := users[i]["UserID"]
 		FirstName := users[i]["FirstName"]
 		LastName := users[i]["LastName"]
@@ -241,7 +241,7 @@ func generateUserQuery() string {
 }
 
 func generateCourseQuery() string {
-	query := "INSERT INTO Courses (CourseID,CourseCode,CourseName,AdminID,LecturerID) VALUES\n"
+	query := "INSERT INTO Course (CourseID,CourseCode,CourseName,AdminID,LecturerID) VALUES\n"
 	for i := range 200 {
 		CourseID := courses[i]["CourseID"]
 		CourseCode := courses[i]["CourseCode"]
@@ -253,6 +253,11 @@ func generateCourseQuery() string {
 	}
 
 	return strings.TrimSuffix(query, ",\n") + ";"
+}
+
+func adminQuery(adminID int) string {
+	query := fmt.Sprintf("INSERT INTO Admin (AdminID) VALUES(%v);", adminID)
+	return query
 }
 
 func getLectures() {
@@ -281,19 +286,21 @@ func writeToFile(filename string, query string) {
 
 func main() {
 
-	out := "inserts.sql"
+	out := "insert.sql"
 
 	gofakeit.Seed(0)
 	generateUsers()
 	getLectures()
-	createCourses(100040)
+	createCourses(100039)
 	generateEnrolments()
 
 	query1 := generateUserQuery()
-	query2 := generateCourseQuery()
-	query3 := generateEnrolQuery()
+	query2 := adminQuery(100039)
+	query3 := generateCourseQuery()
+	query4 := generateEnrolQuery()
 	writeToFile(out, query1)
 	writeToFile(out, query2)
 	writeToFile(out, query3)
+	writeToFile(out, query4)
 
 }

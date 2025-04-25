@@ -1,5 +1,7 @@
 -- Active: 1739830206872@@127.0.0.1@3306@dbproj
 --  User Table (Generalization)
+USE dbproj;
+
 CREATE TABLE User (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(100) NOT NULL,
