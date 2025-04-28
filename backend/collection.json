@@ -1,0 +1,356 @@
+{
+  "info": {
+    "name": "COMP3161 Course Management System API",
+    "_postman_id": "c1e7e4e2-1234-4bcd-9abc-abcdef123456",
+    "description": "All endpoints for CMS backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/health", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["health"] }
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 620200001,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"password\": \"password123\",\n  \"userType\": \"student\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/register", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["register"] }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 620200001,\n  \"password\": \"password123\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["login"] }
+      }
+    },
+    {
+      "name": "Create Course",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"adminId\": 100000001,\n  \"courseCode\": \"COMP3540\",\n  \"courseName\": \"Introduction to Quantum Dynamics\",\n  \"lecturerId\": 300000001\n}"
+        },
+        "url": { "raw": "http://localhost:5000/create_course", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_course"] }
+      }
+    },
+    {
+      "name": "Get All Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses"] }
+      }
+    },
+    {
+      "name": "Get Student Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/courses/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "student", "620200001"] }
+      }
+    },
+    {
+      "name": "Get Lecturer Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/courses/lecturer/300000001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "lecturer", "300000001"] }
+      }
+    },
+    {
+      "name": "Assign Lecturer",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"lecturerId\": 300000001,\n  \"courseCode\": \"COMP3540\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/assign_lecturer", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_lecturer"] }
+      }
+    },
+    {
+      "name": "Assign Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": 620200001,\n  \"courseCode\": \"COMP3540\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/assign_student", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_student"] }
+      }
+    },
+    {
+      "name": "Get Course Members",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/course_members/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_members", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Get Calendar Events for Course",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/calendar_events/course/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["calendar_events", "course", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Get Calendar Events for Student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/calendar_events/student?studentId=620200001&eventDate=2025-05-01",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["calendar_events", "student"],
+          "query": [
+            { "key": "studentId", "value": "620200001" },
+            { "key": "eventDate", "value": "2025-05-01" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Calendar Event",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"courseCode\": \"COMP3540\",\n  \"eventName\": \"Assignment 1\",\n  \"eventDate\": \"2025-05-01\",\n  \"createdBy\": 100000001\n}"
+        },
+        "url": { "raw": "http://localhost:5000/create_calendar_event", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_calendar_event"] }
+      }
+    },
+    {
+      "name": "Get Forums",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/forums/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Create Forum",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"courseCode\": \"COMP3540\",\n  \"forumName\": \"General Discussion\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/create_forum", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_forum"] }
+      }
+    },
+    {
+      "name": "Get Threads",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/threads/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["threads", "1"] }
+      }
+    },
+    {
+      "name": "Create Thread",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"forumId\": 1,\n  \"threadTitle\": \"Welcome\",\n  \"content\": \"Welcome to the forum!\",\n  \"createdBy\": 620200001\n}"
+        },
+        "url": { "raw": "http://localhost:5000/create_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_thread"] }
+      }
+    },
+    {
+      "name": "Reply Thread",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"threadId\": 1,\n  \"parentReplyId\": null,\n  \"content\": \"Thanks!\",\n  \"createdBy\": 300000001\n}"
+        },
+        "url": { "raw": "http://localhost:5000/reply_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reply_thread"] }
+      }
+    },
+    {
+      "name": "Vote Thread",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"threadId\": 1,\n  \"userId\": 620200001,\n  \"vote\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/vote/thread",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["vote", "thread"]
+        }
+      }
+    },
+    {
+      "name": "Vote Reply",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"replyId\": 1,\n  \"userId\": 620200001,\n  \"vote\": -1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/vote/reply",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["vote", "reply"]
+        }
+      }
+    },
+    {
+      "name": "Get Thread Replies (Nested)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/thread/1/replies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["thread", "1", "replies"]
+        }
+      }
+    },
+    {
+      "name": "Get Thread Replies (Flat)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/thread/1/replies_flat",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["thread", "1", "replies_flat"]
+        }
+      }
+    },
+    {
+      "name": "Get Course Content",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/course_content/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_content", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Add Course Content",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sectionId\": 1,\n  \"itemTitle\": \"Lecture Slides\",\n  \"link\": \"http://example.com/slides.pdf\",\n  \"filename\": \"slides.pdf\",\n  \"description\": \"Week 1 slides\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/add_course_content", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["add_course_content"] }
+      }
+    },
+    {
+      "name": "Get Assignments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/assignments/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Submit Assignment",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": 620200001,\n  \"assignmentId\": 1,\n  \"submissionContent\": \"My answer\"\n}"
+        },
+        "url": { "raw": "http://localhost:5000/submit_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["submit_assignment"] }
+      }
+    },
+    {
+      "name": "Grade Assignment",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submissionId\": 1,\n  \"lecturerId\": 300000001,\n  \"score\": 95\n}"
+        },
+        "url": { "raw": "http://localhost:5000/grade_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["grade_assignment"] }
+      }
+    },
+    {
+      "name": "Popular Courses Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/reports/popular_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "popular_courses"] }
+      }
+    },
+    {
+      "name": "Active Students Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/reports/active_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "active_students"] }
+      }
+    },
+    {
+      "name": "Busy Lecturers Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/reports/busy_lecturers", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "busy_lecturers"] }
+      }
+    },
+    {
+      "name": "Top Courses Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/reports/top_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_courses"] }
+      }
+    },
+    {
+      "name": "Top Students Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/reports/top_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_students"] }
+      }
+    }
+  ]
+}
