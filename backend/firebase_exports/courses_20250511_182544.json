@@ -1,0 +1,5070 @@
+{
+  "documents": [
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT1002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Financial Accounting"
+        },
+        "lecturerId": {
+          "integerValue": "300000000"
+        },
+        "lecturerName": {
+          "stringValue": "Alison Mann"
+        },
+        "adminId": {
+          "integerValue": "100000029"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT1003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Cost and Management Accounting"
+        },
+        "lecturerId": {
+          "integerValue": "300000006"
+        },
+        "lecturerName": {
+          "stringValue": "Daniel Ramirez"
+        },
+        "adminId": {
+          "integerValue": "100000007"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT1005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Accounting"
+        },
+        "lecturerId": {
+          "integerValue": "300000072"
+        },
+        "lecturerName": {
+          "stringValue": "Andrea Dunlap"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2014",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Accounting I"
+        },
+        "lecturerId": {
+          "integerValue": "300000016"
+        },
+        "lecturerName": {
+          "stringValue": "Kevin Horton"
+        },
+        "adminId": {
+          "integerValue": "100000028"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2015",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Accounting II"
+        },
+        "lecturerId": {
+          "integerValue": "300000078"
+        },
+        "lecturerName": {
+          "stringValue": "Maria Suarez"
+        },
+        "adminId": {
+          "integerValue": "100000027"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2017",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management Accounting I"
+        },
+        "lecturerId": {
+          "integerValue": "300000026"
+        },
+        "lecturerName": {
+          "stringValue": "Jacob Hardin"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2018",
+      "fields": {
+        "courseName": {
+          "stringValue": "Government Accounting"
+        },
+        "lecturerId": {
+          "integerValue": "300000027"
+        },
+        "lecturerName": {
+          "stringValue": "James Guzman"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2019",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Accounting for Managers"
+        },
+        "lecturerId": {
+          "integerValue": "300000028"
+        },
+        "lecturerName": {
+          "stringValue": "Christine Rosario"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT2025",
+      "fields": {
+        "courseName": {
+          "stringValue": "Fraud Examination"
+        },
+        "lecturerId": {
+          "integerValue": "300000033"
+        },
+        "lecturerName": {
+          "stringValue": "Paula Casey"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3015",
+      "fields": {
+        "courseName": {
+          "stringValue": "Accounting Information Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000177"
+        },
+        "lecturerName": {
+          "stringValue": "Margaret Baker"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3039",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management Accounting II"
+        },
+        "lecturerId": {
+          "integerValue": "300000040"
+        },
+        "lecturerName": {
+          "stringValue": "Christopher Davis"
+        },
+        "adminId": {
+          "integerValue": "100000007"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3040",
+      "fields": {
+        "courseName": {
+          "stringValue": "Advanced Accounting Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000041"
+        },
+        "lecturerName": {
+          "stringValue": "Stephanie Galvan"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3041",
+      "fields": {
+        "courseName": {
+          "stringValue": "Advanced Financial Accounting"
+        },
+        "lecturerId": {
+          "integerValue": "300000050"
+        },
+        "lecturerName": {
+          "stringValue": "John Allen"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3043",
+      "fields": {
+        "courseName": {
+          "stringValue": "Auditing I"
+        },
+        "lecturerId": {
+          "integerValue": "300000052"
+        },
+        "lecturerName": {
+          "stringValue": "Sarah Stewart"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ACCT3044",
+      "fields": {
+        "courseName": {
+          "stringValue": "Auditing II"
+        },
+        "lecturerId": {
+          "integerValue": "300000145"
+        },
+        "lecturerName": {
+          "stringValue": "James Terry"
+        },
+        "adminId": {
+          "integerValue": "100000000"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/AGCP3012",
+      "fields": {
+        "courseName": {
+          "stringValue": "Tropical Food Crops"
+        },
+        "lecturerId": {
+          "integerValue": "300000002"
+        },
+        "lecturerName": {
+          "stringValue": "Cynthia Fisher"
+        },
+        "adminId": {
+          "integerValue": "100000023"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/AGEX3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Island Food Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000056"
+        },
+        "lecturerName": {
+          "stringValue": "Monica Smith"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/AGSL3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Irrigation and Drainage Technology"
+        },
+        "lecturerId": {
+          "integerValue": "300000069"
+        },
+        "lecturerName": {
+          "stringValue": "Michelle Morris"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ANTH455",
+      "fields": {
+        "courseName": {
+          "stringValue": "Study Abroad: Topics in Cultural Anthropology"
+        },
+        "lecturerId": {
+          "integerValue": "300000071"
+        },
+        "lecturerName": {
+          "stringValue": "Ashley Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOC1015",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Biochemistry"
+        },
+        "lecturerId": {
+          "integerValue": "300000087"
+        },
+        "lecturerName": {
+          "stringValue": "Jessica Miller"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL0051",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Biology I"
+        },
+        "lecturerId": {
+          "integerValue": "300000091"
+        },
+        "lecturerName": {
+          "stringValue": "Nancy Rosario"
+        },
+        "adminId": {
+          "integerValue": "100000016"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL0052",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Biology II"
+        },
+        "lecturerId": {
+          "integerValue": "300000067"
+        },
+        "lecturerName": {
+          "stringValue": "Susan Brown"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL1020",
+      "fields": {
+        "courseName": {
+          "stringValue": "Diversity of Life I"
+        },
+        "lecturerId": {
+          "integerValue": "300000093"
+        },
+        "lecturerName": {
+          "stringValue": "Seth Wells"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL1025",
+      "fields": {
+        "courseName": {
+          "stringValue": "Diversity of Life II"
+        },
+        "lecturerId": {
+          "integerValue": "300000094"
+        },
+        "lecturerName": {
+          "stringValue": "Jessica Patterson"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL1030",
+      "fields": {
+        "courseName": {
+          "stringValue": "Cell Biology"
+        },
+        "lecturerId": {
+          "integerValue": "300000095"
+        },
+        "lecturerName": {
+          "stringValue": "Michelle Williams"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BIOL3070",
+      "fields": {
+        "courseName": {
+          "stringValue": "Caribbean Island Ecology and Biogeography"
+        },
+        "lecturerId": {
+          "integerValue": "300000097"
+        },
+        "lecturerName": {
+          "stringValue": "Catherine Khan"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/BOTN338",
+      "fields": {
+        "courseName": {
+          "stringValue": "Environmental Biogeography"
+        },
+        "lecturerId": {
+          "integerValue": "300000100"
+        },
+        "lecturerName": {
+          "stringValue": "David Knight"
+        },
+        "adminId": {
+          "integerValue": "100000024"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM0615",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Chemistry IA"
+        },
+        "lecturerId": {
+          "integerValue": "300000085"
+        },
+        "lecturerName": {
+          "stringValue": "Samuel Torres"
+        },
+        "adminId": {
+          "integerValue": "100000007"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM0625",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Chemistry IB"
+        },
+        "lecturerId": {
+          "integerValue": "300000083"
+        },
+        "lecturerName": {
+          "stringValue": "Richard Gutierrez"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Chemistry I"
+        },
+        "lecturerId": {
+          "integerValue": "300000151"
+        },
+        "lecturerName": {
+          "stringValue": "Christian Hicks"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1120",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Chemistry II"
+        },
+        "lecturerId": {
+          "integerValue": "300000102"
+        },
+        "lecturerName": {
+          "stringValue": "Charles Haley"
+        },
+        "adminId": {
+          "integerValue": "100000028"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1125",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Experimental Chemistry"
+        },
+        "lecturerId": {
+          "integerValue": "300000107"
+        },
+        "lecturerName": {
+          "stringValue": "Danny Simmons"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1130",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Organic Chemistry"
+        },
+        "lecturerId": {
+          "integerValue": "300000110"
+        },
+        "lecturerName": {
+          "stringValue": "Sean Jones"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1901",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Chemistry A"
+        },
+        "lecturerId": {
+          "integerValue": "300000111"
+        },
+        "lecturerName": {
+          "stringValue": "Richard Novak"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM1902",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Chemistry B"
+        },
+        "lecturerId": {
+          "integerValue": "300000115"
+        },
+        "lecturerName": {
+          "stringValue": "Christopher Howell"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM2010",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chemical Analysis A"
+        },
+        "lecturerId": {
+          "integerValue": "300000046"
+        },
+        "lecturerName": {
+          "stringValue": "Amber Gordon"
+        },
+        "adminId": {
+          "integerValue": "100000000"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM2110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Inorganic Chemistry A"
+        },
+        "lecturerId": {
+          "integerValue": "300000116"
+        },
+        "lecturerName": {
+          "stringValue": "Vicki Stewart"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM2210",
+      "fields": {
+        "courseName": {
+          "stringValue": "Organic Chemistry A"
+        },
+        "lecturerId": {
+          "integerValue": "300000120"
+        },
+        "lecturerName": {
+          "stringValue": "Maureen Paul"
+        },
+        "adminId": {
+          "integerValue": "100000032"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM2310",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physical Chemistry A"
+        },
+        "lecturerId": {
+          "integerValue": "300000123"
+        },
+        "lecturerName": {
+          "stringValue": "Steven Burns"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM3110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Inorganic Chemistry B"
+        },
+        "lecturerId": {
+          "integerValue": "300000150"
+        },
+        "lecturerName": {
+          "stringValue": "Dennis Tyler"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM3210",
+      "fields": {
+        "courseName": {
+          "stringValue": "Organic Chemistry B"
+        },
+        "lecturerId": {
+          "integerValue": "300000154"
+        },
+        "lecturerName": {
+          "stringValue": "Jamie Martin"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHEM3310",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physical Chemistry B"
+        },
+        "lecturerId": {
+          "integerValue": "300000155"
+        },
+        "lecturerName": {
+          "stringValue": "Christine Knight"
+        },
+        "adminId": {
+          "integerValue": "100000047"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chinese Language 1A"
+        },
+        "lecturerId": {
+          "integerValue": "300000049"
+        },
+        "lecturerName": {
+          "stringValue": "Frank Moon"
+        },
+        "adminId": {
+          "integerValue": "100000017"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN1002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chinese Language 1B"
+        },
+        "lecturerId": {
+          "integerValue": "300000158"
+        },
+        "lecturerName": {
+          "stringValue": "Frank Gomez"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chinese Language 2A"
+        },
+        "lecturerId": {
+          "integerValue": "300000163"
+        },
+        "lecturerName": {
+          "stringValue": "Lori Frederick"
+        },
+        "adminId": {
+          "integerValue": "100000040"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chinese Language 2B"
+        },
+        "lecturerId": {
+          "integerValue": "300000164"
+        },
+        "lecturerName": {
+          "stringValue": "Sara Carter"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN2214",
+      "fields": {
+        "courseName": {
+          "stringValue": "Survey of Chinese Culture"
+        },
+        "lecturerId": {
+          "integerValue": "300000166"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Duncan"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CHIN3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Chinese Language 3A"
+        },
+        "lecturerId": {
+          "integerValue": "300000182"
+        },
+        "lecturerName": {
+          "stringValue": "William Santana"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/CLTR1100",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Cultural Studies"
+        },
+        "lecturerId": {
+          "integerValue": "300000137"
+        },
+        "lecturerName": {
+          "stringValue": "Ashley Spence"
+        },
+        "adminId": {
+          "integerValue": "100000012"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Athletics"
+        },
+        "lecturerId": {
+          "integerValue": "300000186"
+        },
+        "lecturerName": {
+          "stringValue": "Kristen Johnson"
+        },
+        "adminId": {
+          "integerValue": "100000026"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Basketball"
+        },
+        "lecturerId": {
+          "integerValue": "300000195"
+        },
+        "lecturerName": {
+          "stringValue": "Ashlee Lee"
+        },
+        "adminId": {
+          "integerValue": "100000016"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Cricket"
+        },
+        "lecturerId": {
+          "integerValue": "300000198"
+        },
+        "lecturerName": {
+          "stringValue": "Jason Rodriguez"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Football"
+        },
+        "lecturerId": {
+          "integerValue": "300000143"
+        },
+        "lecturerName": {
+          "stringValue": "Derek Sandoval"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Netball"
+        },
+        "lecturerId": {
+          "integerValue": "300000185"
+        },
+        "lecturerName": {
+          "stringValue": "Micheal Jackson"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Volleyball"
+        },
+        "lecturerId": {
+          "integerValue": "300000122"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Chan"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2050",
+      "fields": {
+        "courseName": {
+          "stringValue": "University Choral Singing"
+        },
+        "lecturerId": {
+          "integerValue": "300000055"
+        },
+        "lecturerName": {
+          "stringValue": "Bryan Martinez"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2052",
+      "fields": {
+        "courseName": {
+          "stringValue": "Using Photography to Document University Life"
+        },
+        "lecturerId": {
+          "integerValue": "300000136"
+        },
+        "lecturerName": {
+          "stringValue": "Nancy Burns"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2060",
+      "fields": {
+        "courseName": {
+          "stringValue": "Alcohol and Other Drugs of Abuse"
+        },
+        "lecturerId": {
+          "integerValue": "300000066"
+        },
+        "lecturerName": {
+          "stringValue": "Jessica Lyons"
+        },
+        "adminId": {
+          "integerValue": "100000006"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2070",
+      "fields": {
+        "courseName": {
+          "stringValue": "Student Entrepreneurial Empowerment Development (SEED)"
+        },
+        "lecturerId": {
+          "integerValue": "300000037"
+        },
+        "lecturerName": {
+          "stringValue": "Samuel Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2071",
+      "fields": {
+        "courseName": {
+          "stringValue": "Basic Peer Helping"
+        },
+        "lecturerId": {
+          "integerValue": "300000187"
+        },
+        "lecturerName": {
+          "stringValue": "Richard Salinas"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COCR2100",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sea Turtle Project"
+        },
+        "lecturerId": {
+          "integerValue": "300000152"
+        },
+        "lecturerName": {
+          "stringValue": "Jodi Allen"
+        },
+        "adminId": {
+          "integerValue": "100000037"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP0001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Computer Science I"
+        },
+        "lecturerId": {
+          "integerValue": "300000119"
+        },
+        "lecturerName": {
+          "stringValue": "Jeffrey Atkinson"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP0002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Computer Science II"
+        },
+        "lecturerId": {
+          "integerValue": "300000003"
+        },
+        "lecturerName": {
+          "stringValue": "Antonio Walker"
+        },
+        "adminId": {
+          "integerValue": "100000002"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1126",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Computing I"
+        },
+        "lecturerId": {
+          "integerValue": "300000132"
+        },
+        "lecturerName": {
+          "stringValue": "Stephen Zimmerman"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1127",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Computing II"
+        },
+        "lecturerId": {
+          "integerValue": "300000185"
+        },
+        "lecturerName": {
+          "stringValue": "Micheal Jackson"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1161",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Object-Oriented Programming"
+        },
+        "lecturerId": {
+          "integerValue": "300000054"
+        },
+        "lecturerName": {
+          "stringValue": "Shelby Barton"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1170",
+      "fields": {
+        "courseName": {
+          "stringValue": "Object-Oriented Programming"
+        },
+        "lecturerId": {
+          "integerValue": "300000173"
+        },
+        "lecturerName": {
+          "stringValue": "Eric Dorsey"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1180",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematics for Computer Science I"
+        },
+        "lecturerId": {
+          "integerValue": "300000053"
+        },
+        "lecturerName": {
+          "stringValue": "Omar Thompson"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1205",
+      "fields": {
+        "courseName": {
+          "stringValue": "Computer Programming I"
+        },
+        "lecturerId": {
+          "integerValue": "300000179"
+        },
+        "lecturerName": {
+          "stringValue": "Heather Collins"
+        },
+        "adminId": {
+          "integerValue": "100000047"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1210",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematics for Computing / Computing and Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000185"
+        },
+        "lecturerName": {
+          "stringValue": "Micheal Jackson"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1215",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Computing"
+        },
+        "lecturerId": {
+          "integerValue": "300000124"
+        },
+        "lecturerName": {
+          "stringValue": "Breanna Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000022"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP1220",
+      "fields": {
+        "courseName": {
+          "stringValue": "Computing and Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000005"
+        },
+        "lecturerName": {
+          "stringValue": "Jonathan Parrish"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2130",
+      "fields": {
+        "courseName": {
+          "stringValue": "Systems Programming"
+        },
+        "lecturerId": {
+          "integerValue": "300000011"
+        },
+        "lecturerName": {
+          "stringValue": "Jane Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000025"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2140",
+      "fields": {
+        "courseName": {
+          "stringValue": "Software Engineering"
+        },
+        "lecturerId": {
+          "integerValue": "300000064"
+        },
+        "lecturerName": {
+          "stringValue": "Mary Baker"
+        },
+        "adminId": {
+          "integerValue": "100000025"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2171",
+      "fields": {
+        "courseName": {
+          "stringValue": "Object Oriented Design & Programming"
+        },
+        "lecturerId": {
+          "integerValue": "300000075"
+        },
+        "lecturerName": {
+          "stringValue": "Amanda Wolfe"
+        },
+        "adminId": {
+          "integerValue": "100000024"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2190",
+      "fields": {
+        "courseName": {
+          "stringValue": "Net-Centric Computing"
+        },
+        "lecturerId": {
+          "integerValue": "300000084"
+        },
+        "lecturerName": {
+          "stringValue": "Stephen Gomez"
+        },
+        "adminId": {
+          "integerValue": "100000017"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2201",
+      "fields": {
+        "courseName": {
+          "stringValue": "Discrete Mathematics for Computer Science"
+        },
+        "lecturerId": {
+          "integerValue": "300000086"
+        },
+        "lecturerName": {
+          "stringValue": "Christine Schmidt"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2211",
+      "fields": {
+        "courseName": {
+          "stringValue": "Analysis of Algorithms"
+        },
+        "lecturerId": {
+          "integerValue": "300000092"
+        },
+        "lecturerName": {
+          "stringValue": "Annette Carter"
+        },
+        "adminId": {
+          "integerValue": "100000035"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP2340",
+      "fields": {
+        "courseName": {
+          "stringValue": "Computer Systems Organisation"
+        },
+        "lecturerId": {
+          "integerValue": "300000153"
+        },
+        "lecturerName": {
+          "stringValue": "Sandra Shepherd"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP3101",
+      "fields": {
+        "courseName": {
+          "stringValue": "Operating Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000140"
+        },
+        "lecturerName": {
+          "stringValue": "Adam Cross"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP3161",
+      "fields": {
+        "courseName": {
+          "stringValue": "Database Management Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000108"
+        },
+        "lecturerName": {
+          "stringValue": "John Stewart"
+        },
+        "adminId": {
+          "integerValue": "100000014"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP3191",
+      "fields": {
+        "courseName": {
+          "stringValue": "Principles of Programming Languages"
+        },
+        "lecturerId": {
+          "integerValue": "300000189"
+        },
+        "lecturerName": {
+          "stringValue": "Matthew Thompson"
+        },
+        "adminId": {
+          "integerValue": "100000045"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP3220",
+      "fields": {
+        "courseName": {
+          "stringValue": "Principles of Artificial Intelligence"
+        },
+        "lecturerId": {
+          "integerValue": "300000025"
+        },
+        "lecturerName": {
+          "stringValue": "Shane Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMP3801",
+      "fields": {
+        "courseName": {
+          "stringValue": "Modern Computer Security"
+        },
+        "lecturerId": {
+          "integerValue": "300000140"
+        },
+        "lecturerName": {
+          "stringValue": "Adam Cross"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/COMS1101",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Human Communication I"
+        },
+        "lecturerId": {
+          "integerValue": "300000064"
+        },
+        "lecturerName": {
+          "stringValue": "Mary Baker"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/DBST1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Understanding Persons with Disabilities"
+        },
+        "lecturerId": {
+          "integerValue": "300000128"
+        },
+        "lecturerName": {
+          "stringValue": "Wanda Copeland"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/DBST2000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Disability, Law and Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000172"
+        },
+        "lecturerName": {
+          "stringValue": "Denise Rodriguez"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON0001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematics for Social Sciences"
+        },
+        "lecturerId": {
+          "integerValue": "300000044"
+        },
+        "lecturerName": {
+          "stringValue": "Jamie Gregory"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Principles of Economics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000190"
+        },
+        "lecturerName": {
+          "stringValue": "Ashley Steele"
+        },
+        "adminId": {
+          "integerValue": "100000026"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Microeconomics"
+        },
+        "lecturerId": {
+          "integerValue": "300000170"
+        },
+        "lecturerName": {
+          "stringValue": "Mary Matthews"
+        },
+        "adminId": {
+          "integerValue": "100000006"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Macroeconomics"
+        },
+        "lecturerId": {
+          "integerValue": "300000139"
+        },
+        "lecturerName": {
+          "stringValue": "Rebecca Fox"
+        },
+        "adminId": {
+          "integerValue": "100000021"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematics for Social Sciences I"
+        },
+        "lecturerId": {
+          "integerValue": "300000089"
+        },
+        "lecturerName": {
+          "stringValue": "Melissa Dickson"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematics for Social Sciences II"
+        },
+        "lecturerId": {
+          "integerValue": "300000019"
+        },
+        "lecturerName": {
+          "stringValue": "Victoria Bradley"
+        },
+        "adminId": {
+          "integerValue": "100000006"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ECON1005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Statistics"
+        },
+        "lecturerId": {
+          "integerValue": "300000135"
+        },
+        "lecturerName": {
+          "stringValue": "Richard Brandt"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ELET1200",
+      "fields": {
+        "courseName": {
+          "stringValue": "Basic Electronics"
+        },
+        "lecturerId": {
+          "integerValue": "300000121"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Stephens"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ELET1205",
+      "fields": {
+        "courseName": {
+          "stringValue": "Digital Electronics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000176"
+        },
+        "lecturerName": {
+          "stringValue": "Craig Dudley"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ELET1210",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Electrical Circuits"
+        },
+        "lecturerId": {
+          "integerValue": "300000074"
+        },
+        "lecturerName": {
+          "stringValue": "Alexis Dunn"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ELET1215",
+      "fields": {
+        "courseName": {
+          "stringValue": "Digital Electronics II"
+        },
+        "lecturerId": {
+          "integerValue": "300000003"
+        },
+        "lecturerName": {
+          "stringValue": "Antonio Walker"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ELET1220",
+      "fields": {
+        "courseName": {
+          "stringValue": "Basic Circuit Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000131"
+        },
+        "lecturerName": {
+          "stringValue": "Caleb White"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ENRM2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Energy Resources and Sustainability"
+        },
+        "lecturerId": {
+          "integerValue": "300000114"
+        },
+        "lecturerName": {
+          "stringValue": "Gloria Green"
+        },
+        "adminId": {
+          "integerValue": "100000031"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ENSC1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Environmental Science"
+        },
+        "lecturerId": {
+          "integerValue": "300000160"
+        },
+        "lecturerName": {
+          "stringValue": "Brandon Rosario"
+        },
+        "adminId": {
+          "integerValue": "100000002"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/ENSC1005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Oceans and Climate"
+        },
+        "lecturerId": {
+          "integerValue": "300000169"
+        },
+        "lecturerName": {
+          "stringValue": "Garrett Suarez"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/FOUN1201",
+      "fields": {
+        "courseName": {
+          "stringValue": "Science, Medicine and Technology in Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000029"
+        },
+        "lecturerName": {
+          "stringValue": "Sarah Ortiz"
+        },
+        "adminId": {
+          "integerValue": "100000006"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/FREN0101",
+      "fields": {
+        "courseName": {
+          "stringValue": "Beginners' French"
+        },
+        "lecturerId": {
+          "integerValue": "300000184"
+        },
+        "lecturerName": {
+          "stringValue": "Brandon Todd"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Gender: Theoretical Concepts and Sources of Knowledge"
+        },
+        "lecturerId": {
+          "integerValue": "300000007"
+        },
+        "lecturerName": {
+          "stringValue": "Caitlin Hanna"
+        },
+        "adminId": {
+          "integerValue": "100000032"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND1103",
+      "fields": {
+        "courseName": {
+          "stringValue": "Theoretical Concepts & Sources of Knowledge"
+        },
+        "lecturerId": {
+          "integerValue": "300000162"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Flores"
+        },
+        "adminId": {
+          "integerValue": "100000009"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Gender in Caribbean Culture I"
+        },
+        "lecturerId": {
+          "integerValue": "300000193"
+        },
+        "lecturerName": {
+          "stringValue": "Patricia Quinn"
+        },
+        "adminId": {
+          "integerValue": "100000000"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Gender in Caribbean Culture II"
+        },
+        "lecturerId": {
+          "integerValue": "300000113"
+        },
+        "lecturerName": {
+          "stringValue": "Sarah Lopez"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sexuality, Power and Illicit Desire"
+        },
+        "lecturerId": {
+          "integerValue": "300000024"
+        },
+        "lecturerName": {
+          "stringValue": "Donna Leon"
+        },
+        "adminId": {
+          "integerValue": "100000027"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND2013",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Men and Masculinities in the Caribbean"
+        },
+        "lecturerId": {
+          "integerValue": "300000015"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND3031",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sex, Gender and Society: Sociological Perspectives"
+        },
+        "lecturerId": {
+          "integerValue": "300000113"
+        },
+        "lecturerName": {
+          "stringValue": "Sarah Lopez"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND3039",
+      "fields": {
+        "courseName": {
+          "stringValue": "Gender and Development with Reference to Caribbean Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000051"
+        },
+        "lecturerName": {
+          "stringValue": "Keith Smith"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEND3701",
+      "fields": {
+        "courseName": {
+          "stringValue": "Gender Analysis and Theories of Development: Implications for Policy and Planning"
+        },
+        "lecturerId": {
+          "integerValue": "300000147"
+        },
+        "lecturerName": {
+          "stringValue": "Timothy Guerra"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEOG1231",
+      "fields": {
+        "courseName": {
+          "stringValue": "Earth Environments I: Geomorphology and Soils"
+        },
+        "lecturerId": {
+          "integerValue": "300000176"
+        },
+        "lecturerName": {
+          "stringValue": "Craig Dudley"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GEOG3116",
+      "fields": {
+        "courseName": {
+          "stringValue": "Geographies of the Caribbean"
+        },
+        "lecturerId": {
+          "integerValue": "300000180"
+        },
+        "lecturerName": {
+          "stringValue": "Lauren Holmes"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT0100",
+      "fields": {
+        "courseName": {
+          "stringValue": "Pre-Calculus for Social Sciences"
+        },
+        "lecturerId": {
+          "integerValue": "300000122"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Chan"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Political Institutions & Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000113"
+        },
+        "lecturerName": {
+          "stringValue": "Sarah Lopez"
+        },
+        "adminId": {
+          "integerValue": "100000017"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Political Philosophy"
+        },
+        "lecturerId": {
+          "integerValue": "300000134"
+        },
+        "lecturerName": {
+          "stringValue": "Jennifer Floyd"
+        },
+        "adminId": {
+          "integerValue": "100000014"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Caribbean Political Philosophy"
+        },
+        "lecturerId": {
+          "integerValue": "300000099"
+        },
+        "lecturerName": {
+          "stringValue": "Zachary Moran"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sports, Politics and Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000080"
+        },
+        "lecturerName": {
+          "stringValue": "Veronica Wright"
+        },
+        "adminId": {
+          "integerValue": "100000012"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2009",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to African Politics"
+        },
+        "lecturerId": {
+          "integerValue": "300000079"
+        },
+        "lecturerName": {
+          "stringValue": "Alexander Jensen"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2010",
+      "fields": {
+        "courseName": {
+          "stringValue": "Politics of the Caribbean / Delinquency and Juvenile Justice"
+        },
+        "lecturerId": {
+          "integerValue": "300000011"
+        },
+        "lecturerName": {
+          "stringValue": "Jane Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000022"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2012",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Public Policy Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000171"
+        },
+        "lecturerName": {
+          "stringValue": "Jimmy Bates"
+        },
+        "adminId": {
+          "integerValue": "100000017"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT2017",
+      "fields": {
+        "courseName": {
+          "stringValue": "Issues in Contemporary Caribbean Politics"
+        },
+        "lecturerId": {
+          "integerValue": "300000070"
+        },
+        "lecturerName": {
+          "stringValue": "Joseph Chen"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT3009",
+      "fields": {
+        "courseName": {
+          "stringValue": "Contemporary Issues in Caribbean Politics"
+        },
+        "lecturerId": {
+          "integerValue": "300000042"
+        },
+        "lecturerName": {
+          "stringValue": "Tonya Solis"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT3014",
+      "fields": {
+        "courseName": {
+          "stringValue": "Theories of International Politics"
+        },
+        "lecturerId": {
+          "integerValue": "300000082"
+        },
+        "lecturerName": {
+          "stringValue": "Matthew Hardin"
+        },
+        "adminId": {
+          "integerValue": "100000028"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/GOVT3035",
+      "fields": {
+        "courseName": {
+          "stringValue": "Comparative Public Policy"
+        },
+        "lecturerId": {
+          "integerValue": "300000090"
+        },
+        "lecturerName": {
+          "stringValue": "Megan Trujillo"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST1003",
+      "fields": {
+        "courseName": {
+          "stringValue": "History of the Caribbean 1500-1900"
+        },
+        "lecturerId": {
+          "integerValue": "300000130"
+        },
+        "lecturerName": {
+          "stringValue": "Jeffrey Bowman"
+        },
+        "adminId": {
+          "integerValue": "100000022"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST1601",
+      "fields": {
+        "courseName": {
+          "stringValue": "The Atlantic World 1400-1600"
+        },
+        "lecturerId": {
+          "integerValue": "300000080"
+        },
+        "lecturerName": {
+          "stringValue": "Veronica Wright"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST1703",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to History"
+        },
+        "lecturerId": {
+          "integerValue": "300000038"
+        },
+        "lecturerName": {
+          "stringValue": "Robert Klein"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Conquest, Colonization and Resistance in the Caribbean, 1600 - the end of slavery"
+        },
+        "lecturerId": {
+          "integerValue": "300000175"
+        },
+        "lecturerName": {
+          "stringValue": "Stephanie Griffin"
+        },
+        "adminId": {
+          "integerValue": "100000026"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2007",
+      "fields": {
+        "courseName": {
+          "stringValue": "Freedom, Decolonization and Independence in the Caribbean since 1804"
+        },
+        "lecturerId": {
+          "integerValue": "300000197"
+        },
+        "lecturerName": {
+          "stringValue": "Kimberly Jackson"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2101",
+      "fields": {
+        "courseName": {
+          "stringValue": "History of Latin America 1810-1910"
+        },
+        "lecturerId": {
+          "integerValue": "300000196"
+        },
+        "lecturerName": {
+          "stringValue": "Ricky White"
+        },
+        "adminId": {
+          "integerValue": "100000029"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2201",
+      "fields": {
+        "courseName": {
+          "stringValue": "History of the USA to 1865"
+        },
+        "lecturerId": {
+          "integerValue": "300000060"
+        },
+        "lecturerName": {
+          "stringValue": "Meghan Lambert"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2202",
+      "fields": {
+        "courseName": {
+          "stringValue": "History of the USA since 1865"
+        },
+        "lecturerId": {
+          "integerValue": "300000104"
+        },
+        "lecturerName": {
+          "stringValue": "Jessica Medina"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST2901",
+      "fields": {
+        "courseName": {
+          "stringValue": "Heritage Management & Tourism in the Caribbean"
+        },
+        "lecturerId": {
+          "integerValue": "300000044"
+        },
+        "lecturerName": {
+          "stringValue": "Jamie Gregory"
+        },
+        "adminId": {
+          "integerValue": "100000012"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HIST3008",
+      "fields": {
+        "courseName": {
+          "stringValue": "Race and Ethnicity in the British Caribbean since 1838"
+        },
+        "lecturerId": {
+          "integerValue": "300000136"
+        },
+        "lecturerName": {
+          "stringValue": "Nancy Burns"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HOTL2016",
+      "fields": {
+        "courseName": {
+          "stringValue": "Computer Applications"
+        },
+        "lecturerId": {
+          "integerValue": "300000127"
+        },
+        "lecturerName": {
+          "stringValue": "Nicholas Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000047"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/HOTL2021",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management Accounting I"
+        },
+        "lecturerId": {
+          "integerValue": "300000074"
+        },
+        "lecturerName": {
+          "stringValue": "Alexis Dunn"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LANG3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business French"
+        },
+        "lecturerId": {
+          "integerValue": "300000162"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Flores"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LANG3003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Spanish"
+        },
+        "lecturerId": {
+          "integerValue": "300000117"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Hernandez"
+        },
+        "adminId": {
+          "integerValue": "100000029"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LAW1010",
+      "fields": {
+        "courseName": {
+          "stringValue": "Law and Legal Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000022"
+        },
+        "lecturerName": {
+          "stringValue": "Gregory Arroyo"
+        },
+        "adminId": {
+          "integerValue": "100000032"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LAW1020",
+      "fields": {
+        "courseName": {
+          "stringValue": "Constitutional Law"
+        },
+        "lecturerId": {
+          "integerValue": "300000048"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Boone"
+        },
+        "adminId": {
+          "integerValue": "100000036"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LAW1110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Criminal Law"
+        },
+        "lecturerId": {
+          "integerValue": "300000103"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Bennett"
+        },
+        "adminId": {
+          "integerValue": "100000031"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/LAW1230",
+      "fields": {
+        "courseName": {
+          "stringValue": "Legal Methods, Research & Writing"
+        },
+        "lecturerId": {
+          "integerValue": "300000004"
+        },
+        "lecturerName": {
+          "stringValue": "Nicholas Galvan"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH0100",
+      "fields": {
+        "courseName": {
+          "stringValue": "Pre-Calculus"
+        },
+        "lecturerId": {
+          "integerValue": "300000073"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Velasquez"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH0110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus and Analytical Geometry"
+        },
+        "lecturerId": {
+          "integerValue": "300000068"
+        },
+        "lecturerName": {
+          "stringValue": "Betty Mcbride"
+        },
+        "adminId": {
+          "integerValue": "100000037"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1141",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Linear Algebra & Analytical Geometry"
+        },
+        "lecturerId": {
+          "integerValue": "300000005"
+        },
+        "lecturerName": {
+          "stringValue": "Jonathan Parrish"
+        },
+        "adminId": {
+          "integerValue": "100000047"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1142",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus I"
+        },
+        "lecturerId": {
+          "integerValue": "300000014"
+        },
+        "lecturerName": {
+          "stringValue": "David Martinez"
+        },
+        "adminId": {
+          "integerValue": "100000032"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1151",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus II"
+        },
+        "lecturerId": {
+          "integerValue": "300000122"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Chan"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1152",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Formal Mathematics / Sets and Number Systems"
+        },
+        "lecturerId": {
+          "integerValue": "300000106"
+        },
+        "lecturerName": {
+          "stringValue": "Charles Brooks"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1190",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus A"
+        },
+        "lecturerId": {
+          "integerValue": "300000168"
+        },
+        "lecturerName": {
+          "stringValue": "Megan Mcdowell"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1195",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus B"
+        },
+        "lecturerId": {
+          "integerValue": "300000034"
+        },
+        "lecturerName": {
+          "stringValue": "Tina Green"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1230",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Applied Statistics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000031"
+        },
+        "lecturerName": {
+          "stringValue": "Donald Cisneros"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH1235",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Calculus"
+        },
+        "lecturerId": {
+          "integerValue": "300000142"
+        },
+        "lecturerName": {
+          "stringValue": "Colleen Lopez"
+        },
+        "adminId": {
+          "integerValue": "100000002"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2274",
+      "fields": {
+        "courseName": {
+          "stringValue": "Probability Theory 1"
+        },
+        "lecturerId": {
+          "integerValue": "300000141"
+        },
+        "lecturerName": {
+          "stringValue": "William Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2401",
+      "fields": {
+        "courseName": {
+          "stringValue": "Elements of Mathematical Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000096"
+        },
+        "lecturerName": {
+          "stringValue": "Timothy Griffin"
+        },
+        "adminId": {
+          "integerValue": "100000040"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2403",
+      "fields": {
+        "courseName": {
+          "stringValue": "Multivariable Calculus"
+        },
+        "lecturerId": {
+          "integerValue": "300000161"
+        },
+        "lecturerName": {
+          "stringValue": "Jason Jones"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2404",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Probability Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000045"
+        },
+        "lecturerName": {
+          "stringValue": "Doris Alexander"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2410",
+      "fields": {
+        "courseName": {
+          "stringValue": "A First Course in Linear Algebra"
+        },
+        "lecturerId": {
+          "integerValue": "300000077"
+        },
+        "lecturerName": {
+          "stringValue": "Joseph Jones"
+        },
+        "adminId": {
+          "integerValue": "100000035"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2411",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Abstract Algebra"
+        },
+        "lecturerId": {
+          "integerValue": "300000075"
+        },
+        "lecturerName": {
+          "stringValue": "Amanda Wolfe"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH2420",
+      "fields": {
+        "courseName": {
+          "stringValue": "Ordinary Differential Equations"
+        },
+        "lecturerId": {
+          "integerValue": "300000058"
+        },
+        "lecturerName": {
+          "stringValue": "Sharon Sherman"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH3400",
+      "fields": {
+        "courseName": {
+          "stringValue": "Complex Variables"
+        },
+        "lecturerId": {
+          "integerValue": "300000023"
+        },
+        "lecturerName": {
+          "stringValue": "Joann Boyd"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH3412",
+      "fields": {
+        "courseName": {
+          "stringValue": "Advanced Abstract Algebra"
+        },
+        "lecturerId": {
+          "integerValue": "300000015"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Garcia"
+        },
+        "adminId": {
+          "integerValue": "100000005"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH3421",
+      "fields": {
+        "courseName": {
+          "stringValue": "Partial Differential Equations"
+        },
+        "lecturerId": {
+          "integerValue": "300000126"
+        },
+        "lecturerName": {
+          "stringValue": "Maria Lewis"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MATH3423",
+      "fields": {
+        "courseName": {
+          "stringValue": "Research Project in Mathematics"
+        },
+        "lecturerId": {
+          "integerValue": "300000030"
+        },
+        "lecturerName": {
+          "stringValue": "Rebecca Bell"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/METE1110",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Oceans and Climate"
+        },
+        "lecturerId": {
+          "integerValue": "300000196"
+        },
+        "lecturerName": {
+          "stringValue": "Ricky White"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/METE1125",
+      "fields": {
+        "courseName": {
+          "stringValue": "Meteorological Observations, Instruments and Basic Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000065"
+        },
+        "lecturerName": {
+          "stringValue": "Amanda Yu"
+        },
+        "adminId": {
+          "integerValue": "100000016"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/METE1130",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Physical Meteorology"
+        },
+        "lecturerId": {
+          "integerValue": "300000051"
+        },
+        "lecturerName": {
+          "stringValue": "Keith Smith"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/METE1135",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Dynamic Meteorology"
+        },
+        "lecturerId": {
+          "integerValue": "300000144"
+        },
+        "lecturerName": {
+          "stringValue": "Hannah Hill"
+        },
+        "adminId": {
+          "integerValue": "100000012"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/METE1305",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Climate Change"
+        },
+        "lecturerId": {
+          "integerValue": "300000141"
+        },
+        "lecturerName": {
+          "stringValue": "William Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000032"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Floyd"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000004"
+        },
+        "lecturerName": {
+          "stringValue": "Nicholas Galvan"
+        },
+        "adminId": {
+          "integerValue": "100000001"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Property and Facilities Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000192"
+        },
+        "lecturerName": {
+          "stringValue": "Patrick Jimenez"
+        },
+        "adminId": {
+          "integerValue": "100000031"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Microcomputer Applications for Business"
+        },
+        "lecturerId": {
+          "integerValue": "300000199"
+        },
+        "lecturerName": {
+          "stringValue": "Lindsey Collins"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management Information Systems I"
+        },
+        "lecturerId": {
+          "integerValue": "300000165"
+        },
+        "lecturerName": {
+          "stringValue": "Kimberly Torres"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2008",
+      "fields": {
+        "courseName": {
+          "stringValue": "Organisational Behaviour"
+        },
+        "lecturerId": {
+          "integerValue": "300000185"
+        },
+        "lecturerName": {
+          "stringValue": "Micheal Jackson"
+        },
+        "adminId": {
+          "integerValue": "100000017"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2012",
+      "fields": {
+        "courseName": {
+          "stringValue": "Quantitative Methods"
+        },
+        "lecturerId": {
+          "integerValue": "300000025"
+        },
+        "lecturerName": {
+          "stringValue": "Shane Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2013",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to International Business"
+        },
+        "lecturerId": {
+          "integerValue": "300000181"
+        },
+        "lecturerName": {
+          "stringValue": "David Mills"
+        },
+        "adminId": {
+          "integerValue": "100000024"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2020",
+      "fields": {
+        "courseName": {
+          "stringValue": "Managerial Economics"
+        },
+        "lecturerId": {
+          "integerValue": "300000109"
+        },
+        "lecturerName": {
+          "stringValue": "Jason Lee"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2021",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Law I"
+        },
+        "lecturerId": {
+          "integerValue": "300000003"
+        },
+        "lecturerName": {
+          "stringValue": "Antonio Walker"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2023",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Management I"
+        },
+        "lecturerId": {
+          "integerValue": "300000034"
+        },
+        "lecturerName": {
+          "stringValue": "Tina Green"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2026",
+      "fields": {
+        "courseName": {
+          "stringValue": "Production and Operations Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000039"
+        },
+        "lecturerName": {
+          "stringValue": "Kyle Ortiz"
+        },
+        "adminId": {
+          "integerValue": "100000026"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2027",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management in Government I"
+        },
+        "lecturerId": {
+          "integerValue": "300000191"
+        },
+        "lecturerName": {
+          "stringValue": "Beth Jennings"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2028",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management in Government II"
+        },
+        "lecturerId": {
+          "integerValue": "300000168"
+        },
+        "lecturerName": {
+          "stringValue": "Megan Mcdowell"
+        },
+        "adminId": {
+          "integerValue": "100000029"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT2224",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Entrepreneurship"
+        },
+        "lecturerId": {
+          "integerValue": "300000098"
+        },
+        "lecturerName": {
+          "stringValue": "Raymond Hicks"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management of Quality"
+        },
+        "lecturerId": {
+          "integerValue": "300000018"
+        },
+        "lecturerName": {
+          "stringValue": "Andrea Ferguson"
+        },
+        "adminId": {
+          "integerValue": "100000014"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Attractions Development and Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000146"
+        },
+        "lecturerName": {
+          "stringValue": "Victoria May"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Hotel and Restaurant Management Seminar"
+        },
+        "lecturerId": {
+          "integerValue": "300000103"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Bennett"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3011",
+      "fields": {
+        "courseName": {
+          "stringValue": "Management Information Systems II"
+        },
+        "lecturerId": {
+          "integerValue": "300000157"
+        },
+        "lecturerName": {
+          "stringValue": "Claudia Wade"
+        },
+        "adminId": {
+          "integerValue": "100000028"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3017",
+      "fields": {
+        "courseName": {
+          "stringValue": "Human Resources Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000101"
+        },
+        "lecturerName": {
+          "stringValue": "Hailey Chambers"
+        },
+        "adminId": {
+          "integerValue": "100000049"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3018",
+      "fields": {
+        "courseName": {
+          "stringValue": "Industrial Relations"
+        },
+        "lecturerId": {
+          "integerValue": "300000188"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Mills"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3022",
+      "fields": {
+        "courseName": {
+          "stringValue": "Organisational Development"
+        },
+        "lecturerId": {
+          "integerValue": "300000035"
+        },
+        "lecturerName": {
+          "stringValue": "Ryan Le"
+        },
+        "adminId": {
+          "integerValue": "100000022"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3024",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Communications"
+        },
+        "lecturerId": {
+          "integerValue": "300000051"
+        },
+        "lecturerName": {
+          "stringValue": "Keith Smith"
+        },
+        "adminId": {
+          "integerValue": "100000041"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3031",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Strategy and Policy"
+        },
+        "lecturerId": {
+          "integerValue": "300000008"
+        },
+        "lecturerName": {
+          "stringValue": "Henry Smith"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3033",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business, Government and Society"
+        },
+        "lecturerId": {
+          "integerValue": "300000125"
+        },
+        "lecturerName": {
+          "stringValue": "Keith Tyler"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3037",
+      "fields": {
+        "courseName": {
+          "stringValue": "International Business Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000020"
+        },
+        "lecturerName": {
+          "stringValue": "Kim Francis"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3038",
+      "fields": {
+        "courseName": {
+          "stringValue": "Cross-National Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000008"
+        },
+        "lecturerName": {
+          "stringValue": "Henry Smith"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3045",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Law II"
+        },
+        "lecturerId": {
+          "integerValue": "300000122"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Chan"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3048",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Management II"
+        },
+        "lecturerId": {
+          "integerValue": "300000171"
+        },
+        "lecturerName": {
+          "stringValue": "Jimmy Bates"
+        },
+        "adminId": {
+          "integerValue": "100000032"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3049",
+      "fields": {
+        "courseName": {
+          "stringValue": "Financial Institutions and Markets"
+        },
+        "lecturerId": {
+          "integerValue": "300000051"
+        },
+        "lecturerName": {
+          "stringValue": "Keith Smith"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3050",
+      "fields": {
+        "courseName": {
+          "stringValue": "Investments and Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000058"
+        },
+        "lecturerName": {
+          "stringValue": "Sharon Sherman"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3053",
+      "fields": {
+        "courseName": {
+          "stringValue": "International Financial Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000183"
+        },
+        "lecturerName": {
+          "stringValue": "Christian Summers"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3055",
+      "fields": {
+        "courseName": {
+          "stringValue": "Applied Topics in Finance"
+        },
+        "lecturerId": {
+          "integerValue": "300000117"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Hernandez"
+        },
+        "adminId": {
+          "integerValue": "100000035"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3056",
+      "fields": {
+        "courseName": {
+          "stringValue": "Project Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000021"
+        },
+        "lecturerName": {
+          "stringValue": "Jason Smith"
+        },
+        "adminId": {
+          "integerValue": "100000009"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3058",
+      "fields": {
+        "courseName": {
+          "stringValue": "New Venture Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000143"
+        },
+        "lecturerName": {
+          "stringValue": "Derek Sandoval"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3061",
+      "fields": {
+        "courseName": {
+          "stringValue": "Team Building and Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000133"
+        },
+        "lecturerName": {
+          "stringValue": "Linda Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3062",
+      "fields": {
+        "courseName": {
+          "stringValue": "Compensation Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000180"
+        },
+        "lecturerName": {
+          "stringValue": "Lauren Holmes"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3063",
+      "fields": {
+        "courseName": {
+          "stringValue": "Labour and Employment Law"
+        },
+        "lecturerId": {
+          "integerValue": "300000156"
+        },
+        "lecturerName": {
+          "stringValue": "Dale Murphy"
+        },
+        "adminId": {
+          "integerValue": "100000020"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3073",
+      "fields": {
+        "courseName": {
+          "stringValue": "Managing Development"
+        },
+        "lecturerId": {
+          "integerValue": "300000063"
+        },
+        "lecturerName": {
+          "stringValue": "Steven Clayton"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3075",
+      "fields": {
+        "courseName": {
+          "stringValue": "Public Enterprise Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000159"
+        },
+        "lecturerName": {
+          "stringValue": "Matthew Crane"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3076",
+      "fields": {
+        "courseName": {
+          "stringValue": "Managing Financial Institutions"
+        },
+        "lecturerId": {
+          "integerValue": "300000153"
+        },
+        "lecturerName": {
+          "stringValue": "Sandra Shepherd"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3077",
+      "fields": {
+        "courseName": {
+          "stringValue": "Managing Innovations"
+        },
+        "lecturerId": {
+          "integerValue": "300000048"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Boone"
+        },
+        "adminId": {
+          "integerValue": "100000029"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3078",
+      "fields": {
+        "courseName": {
+          "stringValue": "Policy Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000061"
+        },
+        "lecturerName": {
+          "stringValue": "Connie Rivera"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3089",
+      "fields": {
+        "courseName": {
+          "stringValue": "Social Entrepreneurship for Sustainable Development"
+        },
+        "lecturerId": {
+          "integerValue": "300000133"
+        },
+        "lecturerName": {
+          "stringValue": "Linda Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3090",
+      "fields": {
+        "courseName": {
+          "stringValue": "Entrepreneurial Finance"
+        },
+        "lecturerId": {
+          "integerValue": "300000170"
+        },
+        "lecturerName": {
+          "stringValue": "Mary Matthews"
+        },
+        "adminId": {
+          "integerValue": "100000014"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3091",
+      "fields": {
+        "courseName": {
+          "stringValue": "Creativity and Innovation Management for Entrepreneurship"
+        },
+        "lecturerId": {
+          "integerValue": "300000188"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Mills"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3096",
+      "fields": {
+        "courseName": {
+          "stringValue": "Taxations and Tax Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000024"
+        },
+        "lecturerName": {
+          "stringValue": "Donna Leon"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MGMT3097",
+      "fields": {
+        "courseName": {
+          "stringValue": "Big Data Analytics"
+        },
+        "lecturerId": {
+          "integerValue": "300000152"
+        },
+        "lecturerName": {
+          "stringValue": "Jodi Allen"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Principles of Marketing"
+        },
+        "lecturerId": {
+          "integerValue": "300000096"
+        },
+        "lecturerName": {
+          "stringValue": "Timothy Griffin"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Marketing Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000090"
+        },
+        "lecturerName": {
+          "stringValue": "Megan Trujillo"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "International Marketing Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000153"
+        },
+        "lecturerName": {
+          "stringValue": "Sandra Shepherd"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Marketing Research"
+        },
+        "lecturerId": {
+          "integerValue": "300000178"
+        },
+        "lecturerName": {
+          "stringValue": "Barbara Nguyen"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3009",
+      "fields": {
+        "courseName": {
+          "stringValue": "Services Marketing"
+        },
+        "lecturerId": {
+          "integerValue": "300000012"
+        },
+        "lecturerName": {
+          "stringValue": "Carla Mason"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3010",
+      "fields": {
+        "courseName": {
+          "stringValue": "Integrated Marketing Communication"
+        },
+        "lecturerId": {
+          "integerValue": "300000047"
+        },
+        "lecturerName": {
+          "stringValue": "Jason Johnson"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3016",
+      "fields": {
+        "courseName": {
+          "stringValue": "Digital Marketing"
+        },
+        "lecturerId": {
+          "integerValue": "300000013"
+        },
+        "lecturerName": {
+          "stringValue": "Claudia Martinez"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/MKTG3070",
+      "fields": {
+        "courseName": {
+          "stringValue": "Consumer Behaviour"
+        },
+        "lecturerId": {
+          "integerValue": "300000118"
+        },
+        "lecturerName": {
+          "stringValue": "Autumn Hall"
+        },
+        "adminId": {
+          "integerValue": "100000035"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/OHSF040",
+      "fields": {
+        "courseName": {
+          "stringValue": "Managing Safety"
+        },
+        "lecturerId": {
+          "integerValue": "300000178"
+        },
+        "lecturerName": {
+          "stringValue": "Barbara Nguyen"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/OOL6001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Graduate Introduction to Online Learning"
+        },
+        "lecturerId": {
+          "integerValue": "300000103"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Bennett"
+        },
+        "adminId": {
+          "integerValue": "100000009"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHIL1901",
+      "fields": {
+        "courseName": {
+          "stringValue": "Business Ethics"
+        },
+        "lecturerId": {
+          "integerValue": "300000173"
+        },
+        "lecturerName": {
+          "stringValue": "Eric Dorsey"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHIL1902",
+      "fields": {
+        "courseName": {
+          "stringValue": "Ethics for the Human Services"
+        },
+        "lecturerId": {
+          "integerValue": "300000009"
+        },
+        "lecturerName": {
+          "stringValue": "Robert Mann"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHIL2028",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sports Ethics"
+        },
+        "lecturerId": {
+          "integerValue": "300000084"
+        },
+        "lecturerName": {
+          "stringValue": "Stephen Gomez"
+        },
+        "adminId": {
+          "integerValue": "100000016"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS0070",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Physics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000191"
+        },
+        "lecturerName": {
+          "stringValue": "Beth Jennings"
+        },
+        "adminId": {
+          "integerValue": "100000023"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS0071",
+      "fields": {
+        "courseName": {
+          "stringValue": "Preliminary Physics II"
+        },
+        "lecturerId": {
+          "integerValue": "300000043"
+        },
+        "lecturerName": {
+          "stringValue": "Cindy Miller"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1200",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physics I: Mechanics"
+        },
+        "lecturerId": {
+          "integerValue": "300000138"
+        },
+        "lecturerName": {
+          "stringValue": "Robert Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1205",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physics II: Waves and Optics"
+        },
+        "lecturerId": {
+          "integerValue": "300000038"
+        },
+        "lecturerName": {
+          "stringValue": "Robert Klein"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1210",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physics III: Thermodynamics, Electricity & Magnetism"
+        },
+        "lecturerId": {
+          "integerValue": "300000194"
+        },
+        "lecturerName": {
+          "stringValue": "John Martinez"
+        },
+        "adminId": {
+          "integerValue": "100000002"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1220",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physics IV: Modern Physics"
+        },
+        "lecturerId": {
+          "integerValue": "300000036"
+        },
+        "lecturerName": {
+          "stringValue": "Jessica Harris"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1411",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mechanics"
+        },
+        "lecturerId": {
+          "integerValue": "300000081"
+        },
+        "lecturerName": {
+          "stringValue": "Theodore Hubbard"
+        },
+        "adminId": {
+          "integerValue": "100000010"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1412",
+      "fields": {
+        "courseName": {
+          "stringValue": "Thermal Physics & Properties of Matter"
+        },
+        "lecturerId": {
+          "integerValue": "300000157"
+        },
+        "lecturerName": {
+          "stringValue": "Claudia Wade"
+        },
+        "adminId": {
+          "integerValue": "100000009"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1421",
+      "fields": {
+        "courseName": {
+          "stringValue": "Optics and Waves"
+        },
+        "lecturerId": {
+          "integerValue": "300000044"
+        },
+        "lecturerName": {
+          "stringValue": "Jamie Gregory"
+        },
+        "adminId": {
+          "integerValue": "100000021"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS1422",
+      "fields": {
+        "courseName": {
+          "stringValue": "Electricity and Magnetism"
+        },
+        "lecturerId": {
+          "integerValue": "300000004"
+        },
+        "lecturerName": {
+          "stringValue": "Nicholas Galvan"
+        },
+        "adminId": {
+          "integerValue": "100000000"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS2401",
+      "fields": {
+        "courseName": {
+          "stringValue": "Mathematical Methods in Physics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000112"
+        },
+        "lecturerName": {
+          "stringValue": "Corey Cole"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS2402",
+      "fields": {
+        "courseName": {
+          "stringValue": "Quantum Mechanics I"
+        },
+        "lecturerId": {
+          "integerValue": "300000062"
+        },
+        "lecturerName": {
+          "stringValue": "Brittany Merritt"
+        },
+        "adminId": {
+          "integerValue": "100000038"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS2403",
+      "fields": {
+        "courseName": {
+          "stringValue": "Classical Mechanics"
+        },
+        "lecturerId": {
+          "integerValue": "300000057"
+        },
+        "lecturerName": {
+          "stringValue": "Danielle Mendoza"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PHYS2404",
+      "fields": {
+        "courseName": {
+          "stringValue": "Electricity & Magnetism I"
+        },
+        "lecturerId": {
+          "integerValue": "300000148"
+        },
+        "lecturerName": {
+          "stringValue": "Denise Watson"
+        },
+        "adminId": {
+          "integerValue": "100000040"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PROC010",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Procurement"
+        },
+        "lecturerId": {
+          "integerValue": "300000025"
+        },
+        "lecturerName": {
+          "stringValue": "Shane Sanchez"
+        },
+        "adminId": {
+          "integerValue": "100000040"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PROC020",
+      "fields": {
+        "courseName": {
+          "stringValue": "The Economics of Procurement"
+        },
+        "lecturerId": {
+          "integerValue": "300000149"
+        },
+        "lecturerName": {
+          "stringValue": "Victor Cantu"
+        },
+        "adminId": {
+          "integerValue": "100000031"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PROC030",
+      "fields": {
+        "courseName": {
+          "stringValue": "The Procurement Cycle"
+        },
+        "lecturerId": {
+          "integerValue": "300000140"
+        },
+        "lecturerName": {
+          "stringValue": "Adam Cross"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PROC040",
+      "fields": {
+        "courseName": {
+          "stringValue": "Asset, Inventory and Records Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000020"
+        },
+        "lecturerName": {
+          "stringValue": "Kim Francis"
+        },
+        "adminId": {
+          "integerValue": "100000013"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PROC050",
+      "fields": {
+        "courseName": {
+          "stringValue": "Procurement Risk Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000191"
+        },
+        "lecturerName": {
+          "stringValue": "Beth Jennings"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000012"
+        },
+        "lecturerName": {
+          "stringValue": "Carla Mason"
+        },
+        "adminId": {
+          "integerValue": "100000023"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Social Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000101"
+        },
+        "lecturerName": {
+          "stringValue": "Hailey Chambers"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC1004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Organisational Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000086"
+        },
+        "lecturerName": {
+          "stringValue": "Christine Schmidt"
+        },
+        "adminId": {
+          "integerValue": "100000021"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Social Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000098"
+        },
+        "lecturerName": {
+          "stringValue": "Raymond Hicks"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Abnormal Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000001"
+        },
+        "lecturerName": {
+          "stringValue": "Candace Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Physiological Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000053"
+        },
+        "lecturerName": {
+          "stringValue": "Omar Thompson"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Personality Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000012"
+        },
+        "lecturerName": {
+          "stringValue": "Carla Mason"
+        },
+        "adminId": {
+          "integerValue": "100000026"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2008",
+      "fields": {
+        "courseName": {
+          "stringValue": "Cognitive Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000193"
+        },
+        "lecturerName": {
+          "stringValue": "Patricia Quinn"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC2012",
+      "fields": {
+        "courseName": {
+          "stringValue": "Developmental Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000076"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Valdez"
+        },
+        "adminId": {
+          "integerValue": "100000027"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Social Cognition"
+        },
+        "lecturerId": {
+          "integerValue": "300000175"
+        },
+        "lecturerName": {
+          "stringValue": "Stephanie Griffin"
+        },
+        "adminId": {
+          "integerValue": "100000007"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC3008",
+      "fields": {
+        "courseName": {
+          "stringValue": "Elements of Counselling and Psychotherapy"
+        },
+        "lecturerId": {
+          "integerValue": "300000035"
+        },
+        "lecturerName": {
+          "stringValue": "Ryan Le"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC3011",
+      "fields": {
+        "courseName": {
+          "stringValue": "Research Project in Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000128"
+        },
+        "lecturerName": {
+          "stringValue": "Wanda Copeland"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/PSYC3023",
+      "fields": {
+        "courseName": {
+          "stringValue": "Contemporary Issues in Social Psychology"
+        },
+        "lecturerId": {
+          "integerValue": "300000127"
+        },
+        "lecturerName": {
+          "stringValue": "Nicholas Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000003"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Social Research"
+        },
+        "lecturerId": {
+          "integerValue": "300000190"
+        },
+        "lecturerName": {
+          "stringValue": "Ashley Steele"
+        },
+        "adminId": {
+          "integerValue": "100000022"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI1002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Sociology I"
+        },
+        "lecturerId": {
+          "integerValue": "300000129"
+        },
+        "lecturerName": {
+          "stringValue": "William Decker"
+        },
+        "adminId": {
+          "integerValue": "100000047"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI1003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sociology and Development"
+        },
+        "lecturerId": {
+          "integerValue": "300000174"
+        },
+        "lecturerName": {
+          "stringValue": "Stephen Daniel"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI1005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introductory Statistics for the Behavioural Sciences"
+        },
+        "lecturerId": {
+          "integerValue": "300000188"
+        },
+        "lecturerName": {
+          "stringValue": "Scott Mills"
+        },
+        "adminId": {
+          "integerValue": "100000008"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI1006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Anthropology"
+        },
+        "lecturerId": {
+          "integerValue": "300000191"
+        },
+        "lecturerName": {
+          "stringValue": "Beth Jennings"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI2000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Classical Social Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000022"
+        },
+        "lecturerName": {
+          "stringValue": "Gregory Arroyo"
+        },
+        "adminId": {
+          "integerValue": "100000034"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Modern Social Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000020"
+        },
+        "lecturerName": {
+          "stringValue": "Kim Francis"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SOCI2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sociology of a Diasporic Community"
+        },
+        "lecturerId": {
+          "integerValue": "300000038"
+        },
+        "lecturerName": {
+          "stringValue": "Robert Klein"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SPAN0101",
+      "fields": {
+        "courseName": {
+          "stringValue": "Beginners' Spanish"
+        },
+        "lecturerId": {
+          "integerValue": "300000017"
+        },
+        "lecturerName": {
+          "stringValue": "Leslie Dennis"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Statistics for the Social Sciences"
+        },
+        "lecturerId": {
+          "integerValue": "300000119"
+        },
+        "lecturerName": {
+          "stringValue": "Jeffrey Atkinson"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Inferential Statistics"
+        },
+        "lecturerId": {
+          "integerValue": "300000073"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Velasquez"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Discrete Probability Theory"
+        },
+        "lecturerId": {
+          "integerValue": "300000135"
+        },
+        "lecturerName": {
+          "stringValue": "Richard Brandt"
+        },
+        "adminId": {
+          "integerValue": "100000019"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Linear Models"
+        },
+        "lecturerId": {
+          "integerValue": "300000156"
+        },
+        "lecturerName": {
+          "stringValue": "Dale Murphy"
+        },
+        "adminId": {
+          "integerValue": "100000018"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Multivariate Methods"
+        },
+        "lecturerId": {
+          "integerValue": "300000081"
+        },
+        "lecturerName": {
+          "stringValue": "Theodore Hubbard"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Regression Analysis"
+        },
+        "lecturerId": {
+          "integerValue": "300000048"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Boone"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/STAT3002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Time Series"
+        },
+        "lecturerId": {
+          "integerValue": "300000023"
+        },
+        "lecturerName": {
+          "stringValue": "Joann Boyd"
+        },
+        "adminId": {
+          "integerValue": "100000030"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Software Engineering"
+        },
+        "lecturerId": {
+          "integerValue": "300000086"
+        },
+        "lecturerName": {
+          "stringValue": "Christine Schmidt"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Data Structures"
+        },
+        "lecturerId": {
+          "integerValue": "300000001"
+        },
+        "lecturerName": {
+          "stringValue": "Candace Thomas"
+        },
+        "adminId": {
+          "integerValue": "100000044"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Computer Organisation & Architecture"
+        },
+        "lecturerId": {
+          "integerValue": "300000035"
+        },
+        "lecturerName": {
+          "stringValue": "Ryan Le"
+        },
+        "adminId": {
+          "integerValue": "100000043"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Object Oriented Programming"
+        },
+        "lecturerId": {
+          "integerValue": "300000059"
+        },
+        "lecturerName": {
+          "stringValue": "Brittany Palmer"
+        },
+        "adminId": {
+          "integerValue": "100000033"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Discrete Mathematics"
+        },
+        "lecturerId": {
+          "integerValue": "300000010"
+        },
+        "lecturerName": {
+          "stringValue": "Lindsay Hall"
+        },
+        "adminId": {
+          "integerValue": "100000006"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1005",
+      "fields": {
+        "courseName": {
+          "stringValue": "Web Programming and Technologies I"
+        },
+        "lecturerId": {
+          "integerValue": "300000024"
+        },
+        "lecturerName": {
+          "stringValue": "Donna Leon"
+        },
+        "adminId": {
+          "integerValue": "100000015"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1006",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus I"
+        },
+        "lecturerId": {
+          "integerValue": "300000042"
+        },
+        "lecturerName": {
+          "stringValue": "Tonya Solis"
+        },
+        "adminId": {
+          "integerValue": "100000007"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1007",
+      "fields": {
+        "courseName": {
+          "stringValue": "Calculus II"
+        },
+        "lecturerId": {
+          "integerValue": "300000077"
+        },
+        "lecturerName": {
+          "stringValue": "Joseph Jones"
+        },
+        "adminId": {
+          "integerValue": "100000046"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1008",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Requirements Engineering"
+        },
+        "lecturerId": {
+          "integerValue": "300000167"
+        },
+        "lecturerName": {
+          "stringValue": "Michael Gardner"
+        },
+        "adminId": {
+          "integerValue": "100000027"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/SWEN1009",
+      "fields": {
+        "courseName": {
+          "stringValue": "Programming Methodology"
+        },
+        "lecturerId": {
+          "integerValue": "300000117"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Hernandez"
+        },
+        "adminId": {
+          "integerValue": "100000039"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR2000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Introduction to Travel, Tourism and Hospitality"
+        },
+        "lecturerId": {
+          "integerValue": "300000136"
+        },
+        "lecturerName": {
+          "stringValue": "Nancy Burns"
+        },
+        "adminId": {
+          "integerValue": "100000016"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR2001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Caribbean Tourism"
+        },
+        "lecturerId": {
+          "integerValue": "300000088"
+        },
+        "lecturerName": {
+          "stringValue": "Phillip Leach"
+        },
+        "adminId": {
+          "integerValue": "100000042"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR2002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Transportation and Travel"
+        },
+        "lecturerId": {
+          "integerValue": "300000059"
+        },
+        "lecturerName": {
+          "stringValue": "Brittany Palmer"
+        },
+        "adminId": {
+          "integerValue": "100000011"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR2003",
+      "fields": {
+        "courseName": {
+          "stringValue": "Tourism Planning and Development II"
+        },
+        "lecturerId": {
+          "integerValue": "300000073"
+        },
+        "lecturerName": {
+          "stringValue": "Mark Velasquez"
+        },
+        "adminId": {
+          "integerValue": "100000004"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR2004",
+      "fields": {
+        "courseName": {
+          "stringValue": "Research Methods for Business"
+        },
+        "lecturerId": {
+          "integerValue": "300000023"
+        },
+        "lecturerName": {
+          "stringValue": "Joann Boyd"
+        },
+        "adminId": {
+          "integerValue": "100000021"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR3000",
+      "fields": {
+        "courseName": {
+          "stringValue": "Tourism Management"
+        },
+        "lecturerId": {
+          "integerValue": "300000194"
+        },
+        "lecturerName": {
+          "stringValue": "John Martinez"
+        },
+        "adminId": {
+          "integerValue": "100000009"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR3001",
+      "fields": {
+        "courseName": {
+          "stringValue": "Sustainable Tourism"
+        },
+        "lecturerId": {
+          "integerValue": "300000032"
+        },
+        "lecturerName": {
+          "stringValue": "Angela Floyd"
+        },
+        "adminId": {
+          "integerValue": "100000048"
+        }
+      }
+    },
+    {
+      "name": "projects/comp3161-project/databases/(default)/documents/courses/TOUR3002",
+      "fields": {
+        "courseName": {
+          "stringValue": "Tourism Marketing"
+        },
+        "lecturerId": {
+          "integerValue": "300000105"
+        },
+        "lecturerName": {
+          "stringValue": "Jacob Mcgrath"
+        },
+        "adminId": {
+          "integerValue": "100000025"
+        }
+      }
+    }
+  ]
+}
