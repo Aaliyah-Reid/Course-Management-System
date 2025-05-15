@@ -18,7 +18,7 @@ def get_db_connection():
         db_username = os.getenv('DB_USERNAME')
         db_password = os.getenv('DB_PASSWORD')
         db_name = os.getenv('DB_NAME')  # It's a good practice to load the database name from .env too
-
+        print(db_host)
         conn = mysql.connector.connect(
             host=db_host,
             user=db_username,
@@ -166,7 +166,7 @@ def create_course():
 def retrieve_courses():
     conn= get_db_connection()
     if not conn:
-        return jsonify({'error': 'Database connection failed'}), 500
+        return jsonify({'error': conn}), 500
     
     cursor = conn.cursor(dictionary=True)
     try:
@@ -819,8 +819,6 @@ def grade_assignment():
 
 
 
-
-
 # Reports (You must also create views for the following)
 # All courses that have 50 or more students
 # All students that do 5 or more courses.
@@ -838,11 +836,11 @@ def get_popular_courses():
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute("""
-            select c.coursecode, c.coursename, count(r.studentid) as student_count
-            from course c
-            join registration r on c.coursecode = r.coursecode
-            group by c.coursecode
-            having student_count >= 50
+            SELECT c.CourseCode, c.CourseName, COUNT(e.UserID) AS student_count
+            FROM Course c
+            JOIN Enrol e ON c.CourseCode = e.CourseCode
+            GROUP BY c.CourseCode, c.CourseName
+            HAVING student_count >= 50
         """)
         courses = cursor.fetchall()
 
@@ -866,12 +864,12 @@ def get_active_students():
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute("""
-            select s.studentid, u.firstname, u.lastname, count(r.coursecode) as course_count
-            from student s
-            join user u on s.studentid = u.userid
-            join registration r on s.studentid = r.studentid
-            group by s.studentid
-            having course_count >= 5
+            SELECT s.StudentID, u.FirstName, u.LastName, COUNT(e.CourseCode) AS course_count
+            FROM Student s
+            JOIN User u ON s.StudentID = u.UserID
+            JOIN Enrol e ON s.StudentID = e.UserID
+            GROUP BY s.StudentID, u.FirstName, u.LastName
+            HAVING course_count >= 5
         """)
         students = cursor.fetchall()
 
@@ -914,6 +912,7 @@ def get_busy_lecturers():
         conn.close()
 
 
+
 @app.route('/reports/top_courses', methods=['GET'])
 def get_top_courses():
     """Retrieves the 10 most enrolled courses."""
@@ -924,12 +923,12 @@ def get_top_courses():
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute("""
-            select c.coursecode, c.coursename, count(r.studentid) as student_count
-            from course c
-            join registration r on c.coursecode = r.coursecode
-            group by c.coursecode
-            order by student_count desc
-            limit 10
+            SELECT c.CourseCode, c.CourseName, COUNT(e.UserID) AS student_count
+            FROM Course c
+            JOIN Enrol e ON c.CourseCode = e.CourseCode
+            GROUP BY c.CourseCode, c.CourseName
+            ORDER BY student_count DESC
+            LIMIT 10
         """)
         courses = cursor.fetchall()
 
@@ -941,6 +940,7 @@ def get_top_courses():
     finally:
         cursor.close()
         conn.close()
+
 
 
 
