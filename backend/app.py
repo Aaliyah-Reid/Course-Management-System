@@ -455,7 +455,7 @@ def get_calendar_events_for_course(course_code):
                 })
 
             # Fetch assignments
-            cursor.execute("SELECT assignmentid, content, duedate FROM assignment WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT assignmentid, content, duedate FROM Assignment WHERE coursecode = %s", (course_code,))
             assignments_raw = cursor.fetchall()
 
             for assign in assignments_raw:
