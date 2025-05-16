@@ -519,7 +519,7 @@ def get_calendar_events_for_student():
 
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("""
+            cursor.execute(f"""
                 SELECT
              ce.EventName,
             ce.EventDate,
@@ -534,11 +534,11 @@ def get_calendar_events_for_student():
     User u ON e.UserID = u.UserID
     WHERE
     u.UserType = 'student'
-    AND u.UserID = %s;
-            """, (student_id))
+    AND u.UserID = {student_id};
+            """,)
             events = cursor.fetchall()
 
-            return jsonify({'studentId': student_id, 'eventDate': event_date, 'events': events}), 200
+            return jsonify({'studentId': student_id, 'events': events}), 200
 
         except mysql.connector.Error as err:
             return jsonify({'error': f'Failed to retrieve student calendar events: {str(err)}'}), 500
