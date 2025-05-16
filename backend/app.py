@@ -576,7 +576,6 @@ def create_calendar_event():
         except mysql.connector.Error as err:
             conn.rollback()
             return jsonify({'error': f'Failed to create calendar event: {str(err)}'}), 500
-
         finally:
             cursor.close()
             conn.close()
@@ -1213,7 +1212,7 @@ def get_course_assignments_for_student(course_code, student_id):
                 s.uploaddate AS submission_uploaddate,
                 g.score
             FROM Assignment a
-            LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = %s
+            LEFT JOIN Submission s ON a.assignmentid = s.assignmentid AND s.studentid = %s
             LEFT JOIN Grade g ON s.submissionid = g.submissionid
             WHERE a.coursecode = %s
             ORDER BY a.duedate;
