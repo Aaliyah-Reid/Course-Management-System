@@ -592,7 +592,7 @@ def get_forums(course_code):
 
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("SELECT forumid, forumname FROM discussionforum WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT forumid, forumname FROM DiscussionForum WHERE coursecode = %s", (course_code,))
             forums = cursor.fetchall()
 
             return jsonify({'courseCode': course_code, 'forums': forums}), 200
@@ -622,11 +622,11 @@ def create_forum():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT coursecode FROM course WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT coursecode FROM Course WHERE coursecode = %s", (course_code,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Course does not exist'}), 404
             
-            cursor.execute("INSERT INTO discussionforum (coursecode, forumname) VALUES (%s, %s)", (course_code, forum_name))
+            cursor.execute("INSERT INTO DiscussionForum (coursecode, forumname) VALUES (%s, %s)", (course_code, forum_name))
             conn.commit()
 
             return jsonify({'message': 'Forum created successfully'}), 201
