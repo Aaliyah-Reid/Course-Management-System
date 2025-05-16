@@ -31,6 +31,9 @@ services:
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
       UPLOAD_LIMIT: "512M"
+      MAX_EXECUTION_TIME: 6000
+      MAX_INPUT_TIME: 6000
+      POST_MAX_SIZE: "300M"
     restart: always
     ports:
       - 8100:80
