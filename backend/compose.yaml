@@ -20,6 +20,18 @@ services:
       - "6100:3306"
     volumes:
       - dbdata:/var/lib/mysql
+  caddy:
+    image: caddy:<version>
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -41,5 +53,7 @@ services:
 
 volumes:
   dbdata:
+  caddy_data:
+  caddy_config:
 
     
