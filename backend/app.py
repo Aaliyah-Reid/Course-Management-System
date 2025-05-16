@@ -1193,12 +1193,12 @@ def get_course_assignments_for_student(course_code, student_id):
         cursor = conn.cursor(dictionary=True)
 
         # Check if student exists
-        cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+        cursor.execute("SELECT studentid FROM Student WHERE studentid = %s", (student_id,))
         if cursor.fetchone() is None:
             return jsonify({'error': 'Student not found'}), 404
 
         # Check if course exists
-        cursor.execute("SELECT coursecode FROM course WHERE coursecode = %s", (course_code,))
+        cursor.execute("SELECT coursecode FROM Course WHERE coursecode = %s", (course_code,))
         if cursor.fetchone() is None:
             return jsonify({'error': 'Course not found'}), 404
 
