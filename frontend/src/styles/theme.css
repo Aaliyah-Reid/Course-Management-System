@@ -1,0 +1,113 @@
+/* Default Theme */
+:root[data-theme="default"][data-mode="light"] {
+  --text: #050609;
+  --background: #f9fafd;
+  --primary: #767fa0;
+  --secondary: #7f99e9;
+  --accent: #b591af;
+}
+
+:root[data-theme="default"][data-mode="dark"] {
+  --text: #f5f6fa;
+  --background: #030408;
+  --primary: #5e6787;
+  --secondary: #15307e;
+  --accent: #6e4968;
+}
+
+/* Calm Theme */
+:root[data-theme="calm"][data-mode="light"] {
+  --text: hsl(228, 33%, 3%);
+  --background: hsl(0, 0%, 86%);
+  --primary: hsl(227, 18%, 55%);
+  --secondary: hsl(225, 71%, 71%);
+  --accent: hsl(311, 20%, 64%);
+}
+
+:root[data-theme="calm"][data-mode="dark"] {
+  --text: hsl(228, 33%, 97%);
+  --background: hsl(0, 0%, 14%);
+  --primary: hsl(227, 18%, 45%);
+  --secondary: hsl(225, 71%, 29%);
+  --accent: hsl(311, 20%, 36%);
+}
+
+/* Subtle Theme */
+:root[data-theme="subtle"][data-mode="light"] {
+  --text: hsl(75, 15%, 5%);
+  --background: hsl(0, 0%, 87%);
+  --primary: hsl(76, 14%, 53%);
+  --secondary: hsl(227, 14%, 75%);
+  --accent: hsl(275, 14%, 64%);
+}
+
+:root[data-theme="subtle"][data-mode="dark"] {
+  --text: hsl(75, 15%, 95%);
+  --background: hsl(0, 0%, 13%);
+  --primary: hsl(76, 14%, 47%);
+  --secondary: hsl(227, 14%, 25%);
+  --accent: hsl(275, 14%, 36%);
+}
+
+/* Neon Theme */
+:root[data-theme="neon"][data-mode="light"] {
+  --text: hsl(339, 94%, 7%);
+  --background: hsl(339, 100%, 96%);
+  --primary: hsl(337, 97%, 54%);
+  --secondary: hsl(174, 60%, 66%);
+  --accent: hsl(79, 97%, 63%);
+}
+
+:root[data-theme="neon"][data-mode="dark"] {
+  --text: hsl(339, 94%, 93%);
+  --background: hsl(339, 100%, 4%);
+  --primary: hsl(337, 97%, 46%);
+  --secondary: hsl(174, 60%, 34%);
+  --accent: hsl(79, 97%, 37%);
+}
+
+/* Mature Theme */
+:root[data-theme="mature"][data-mode="light"] {
+  --text: hsl(300, 60%, 3%);
+  --background: hsl(305, 60%, 96%);
+  --primary: hsl(306, 49%, 48%);
+  --secondary: hsl(357, 12%, 70%);
+  --accent: hsl(346, 61%, 65%);
+}
+
+:root[data-theme="mature"][data-mode="dark"] {
+  --text: hsl(300, 60%, 97%);
+  --background: hsl(305, 60%, 4%);
+  --primary: hsl(306, 49%, 52%);
+  --secondary: hsl(357, 12%, 30%);
+  --accent: hsl(346, 61%, 35%);
+}
+
+/* Ocean Theme */
+:root[data-theme="ocean"][data-mode="light"] {
+  --text: #020508;
+  --background: #ebf5fa;
+  --primary: #2b9fda;
+  --secondary: #ea9d86;
+  --accent: #d2e25a;
+}
+
+:root[data-theme="ocean"][data-mode="dark"] {
+  --text: #f7fafd;
+  --background: #050f14;
+  --primary: #259ad4;
+  --secondary: #792d15;
+  --accent: #95a51d;
+}
+
+/* Theme utility classes */
+.bg-theme-background { background-color: var(--background); }
+.bg-theme-primary { background-color: var(--primary); }
+.bg-theme-secondary { background-color: var(--secondary); }
+.bg-theme-accent { background-color: var(--accent); }
+.text-theme-text { color: var(--text); }
+
+/* Theme transitions */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
