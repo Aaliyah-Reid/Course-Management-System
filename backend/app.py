@@ -1278,9 +1278,9 @@ def get_lecturer_course_grades(lecturer_id):
                     s.submissioncontent,
                     s.uploaddate AS submissiondate,
                     g.score
-                FROM course c
+                FROM Course c
                 JOIN Assignment a ON c.coursecode = a.coursecode
-                LEFT JOIN submission s ON a.assignmentid = s.assignmentid
+                LEFT JOIN Submission s ON a.assignmentid = s.assignmentid
                 LEFT JOIN User u ON s.studentid = u.userid
                 LEFT JOIN Grade g ON s.submissionid = g.submissionid
                 WHERE c.lecturerid = %s
