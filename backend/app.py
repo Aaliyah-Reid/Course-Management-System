@@ -521,11 +521,22 @@ def get_calendar_events_for_student():
         cursor = conn.cursor(dictionary=True)
         try:
             cursor.execute("""
-                SELECT ce.eventid, ce.eventname, ce.eventdate, ce.coursecode
-                FROM CalendarEvents ce
-                JOIN Enrol e ON ce.coursecode = e.coursecode
-                WHERE e.userid = %s AND date(ce.eventdate) = %s
-            """, (student_id, event_date))
+                SELECT
+             ce.EventName,
+            ce.EventDate,
+             c.CourseName
+        FROM
+        CalendarEvents ce
+    JOIN
+        Course c ON ce.CourseCode = c.CourseCode
+    JOIN
+    Enrol e ON c.CourseCode = e.CourseCode
+    JOIN
+    User u ON e.UserID = u.UserID
+    WHERE
+    u.UserType = 'student'
+    AND u.UserID = %s;
+            """, (student_id))
             events = cursor.fetchall()
 
             return jsonify({'studentId': student_id, 'eventDate': event_date, 'events': events}), 200
