@@ -1,12 +1,10 @@
-FROM python:latest
+FROM python:alpine
 
 WORKDIR /app
 
 COPY requirements.txt .
-COPY app.py .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT ["python3", "app.py"]
+COPY . .
 
-EXPOSE 5000
+ENTRYPOINT ["python3", "app.py"]
