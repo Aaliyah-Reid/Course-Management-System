@@ -509,9 +509,8 @@ def get_calendar_events_for_course(course_code):
 def get_calendar_events_for_student():
     try:
         student_id = request.args.get('studentId')
-        event_date = request.args.get('eventDate')
 
-        if not student_id or not event_date:
+        if not student_id:
             return jsonify({'error': 'Missing required fields'}), 400
 
         conn = get_db_connection()
