@@ -21,7 +21,7 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
   caddy:
-    image: caddy:<version>
+    image: caddy:latest
     restart: unless-stopped
     ports:
       - "80:80"
