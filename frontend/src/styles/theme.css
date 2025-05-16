@@ -83,6 +83,23 @@
   --accent: hsl(346, 61%, 35%);
 }
 
+/* Ocean Theme */
+:root[data-theme="ocean"][data-mode="light"] {
+  --text: #020508;
+  --background: #ebf5fa;
+  --primary: #2b9fda;
+  --secondary: #ea9d86;
+  --accent: #d2e25a;
+}
+
+:root[data-theme="ocean"][data-mode="dark"] {
+  --text: #f7fafd;
+  --background: #050f14;
+  --primary: #259ad4;
+  --secondary: #792d15;
+  --accent: #95a51d;
+}
+
 /* Theme utility classes */
 .bg-theme-background { background-color: var(--background); }
 .bg-theme-primary { background-color: var(--primary); }

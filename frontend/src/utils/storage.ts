@@ -1,25 +1,25 @@
 const STORAGE_KEYS = {
   REMEMBER_ME: 'lms_remember_me',
-  USER_EMAIL: 'lms_user_email'
+  USER_ID: 'lms_user_id'
 };
 
-export const saveLoginPreferences = (email: string, rememberMe: boolean): void => {
+export const saveLoginPreferences = (userId: string, rememberMe: boolean): void => {
   if (rememberMe) {
     localStorage.setItem(STORAGE_KEYS.REMEMBER_ME, 'true');
-    localStorage.setItem(STORAGE_KEYS.USER_EMAIL, email);
+    localStorage.setItem(STORAGE_KEYS.USER_ID, userId);
   } else {
     clearLoginPreferences();
   }
 };
 
-export const getSavedLoginPreferences = (): { email: string; rememberMe: boolean } => {
+export const getSavedLoginPreferences = (): { userId: string; rememberMe: boolean } => {
   const rememberMe = localStorage.getItem(STORAGE_KEYS.REMEMBER_ME) === 'true';
-  const email = localStorage.getItem(STORAGE_KEYS.USER_EMAIL) || '';
+  const userId = localStorage.getItem(STORAGE_KEYS.USER_ID) || '';
   
-  return { email, rememberMe };
+  return { userId, rememberMe };
 };
 
 export const clearLoginPreferences = (): void => {
   localStorage.removeItem(STORAGE_KEYS.REMEMBER_ME);
-  localStorage.removeItem(STORAGE_KEYS.USER_EMAIL);
+  localStorage.removeItem(STORAGE_KEYS.USER_ID);
 };

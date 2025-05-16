@@ -1,16 +1,74 @@
 import React from 'react';
 import { UserIcon } from '@heroicons/react/24/outline';
+import { Participant } from '../../../types/course'; // Assuming Participant type exists
 
 interface CourseParticipantsProps {
   courseCode: string;
 }
 
 const CourseParticipants: React.FC<CourseParticipantsProps> = ({ courseCode }) => {
-  // Mock data - replace with actual data from your backend
-  const participants = [
-    { id: '1', firstName: 'John', lastName: 'Doe', role: 'lecturer' },
-    { id: '2', firstName: 'Jane', lastName: 'Smith', role: 'student' },
-  ];
+  const [participants, setParticipants] = React.useState<Participant[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (!courseCode) return;
+
+    const fetchParticipants = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`http://localhost:5000/course_members/${courseCode}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        // The API returns { lecturer: { lecturerid: string, ... }, students: [{ studentid: string, firstname: string, lastname: string }, ...] }
+        // We need to combine these into a single Participant array
+        const fetchedParticipants: Participant[] = [];
+        if (data.lecturer && data.lecturer.lecturerid) {
+          // Assuming lecturer details are available or can be fetched if needed
+          // For now, creating a placeholder if full details aren't in this response
+          fetchedParticipants.push({
+            id: data.lecturer.lecturerid.toString(), 
+            firstName: data.lecturer.firstname || 'Lecturer', // Placeholder if name not directly available
+            lastName: data.lecturer.lastname || '',
+            role: 'lecturer',
+          });
+        }
+        if (data.students && Array.isArray(data.students)) {
+          data.students.forEach((student: any) => {
+            fetchedParticipants.push({
+              id: student.studentid.toString(),
+              firstName: student.firstname,
+              lastName: student.lastname,
+              role: 'student',
+            });
+          });
+        }
+        setParticipants(fetchedParticipants);
+        setError(null);
+      } catch (e: any) {
+        setError(e.message || 'Failed to fetch participants');
+        setParticipants([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchParticipants();
+  }, [courseCode]);
+
+  if (isLoading) {
+    return <div className="text-center py-4 text-theme-text">Loading participants...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-4 text-red-500">Error: {error}</div>;
+  }
+  
+  if (participants.length === 0) {
+    return <div className="text-center py-4 text-theme-text">No participants found for this course.</div>;
+  }
 
   return (
     <div className="space-y-4">

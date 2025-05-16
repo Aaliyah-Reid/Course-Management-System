@@ -7,6 +7,7 @@ const themes: { value: ThemeName; label: string }[] = [
   { value: 'subtle', label: 'Subtle' },
   { value: 'neon', label: 'Neon' },
   { value: 'mature', label: 'Mature' },
+  { value: 'ocean', label: 'Ocean' },
 ];
 
 const modes: { value: ThemeMode; label: string }[] = [
@@ -14,7 +15,9 @@ const modes: { value: ThemeMode; label: string }[] = [
   { value: 'dark', label: 'Dark' },
 ];
 
-const PreferencesPage: React.FC = () => {
+interface PreferencesPageProps {}
+
+const PreferencesPage: React.FC<PreferencesPageProps> = () => {
   const { theme, mode, setTheme, setMode } = useThemeStore();
 
   return (

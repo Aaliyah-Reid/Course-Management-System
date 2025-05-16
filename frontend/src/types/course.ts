@@ -1,14 +1,14 @@
 export interface Course {
-  id: string;
-  name: string;
-  code: string;
-  lastAccessed: string;
+  coursecode: string;
+  coursename: string;
+  lecturerName?: string;
 }
 
 export interface Section {
   id: string;
   courseCode: string;
   title: string;
+  items: SectionItem[];
 }
 
 export interface SectionItem {
@@ -18,6 +18,7 @@ export interface SectionItem {
   link?: string;
   filename?: string;
   description?: string;
+  type: string;
 }
 
 export interface Assignment {
@@ -42,3 +43,11 @@ export interface Announcement {
   createdAt: string;
   createdBy: string;
 }
+
+// You can add other course-related types here if needed
+// For example, if you have a more detailed Course type elsewhere:
+// export interface CourseDetail extends Course {
+//   description?: string;
+//   lecturerId?: string;
+//   adminId?: string;
+// }

@@ -28,10 +28,8 @@ export const getPasswordStrength = (password: string): number => {
 export const validateLoginForm = (data: LoginFormData): LoginFormErrors => {
   const errors: LoginFormErrors = {};
   
-  if (!data.email.trim()) {
-    errors.email = 'Email is required';
-  } else if (!isValidEmail(data.email)) {
-    errors.email = 'Please enter a valid email address';
+  if (!data.userId.trim()) {
+    errors.userId = 'User ID is required';
   }
   
   if (!data.password) {

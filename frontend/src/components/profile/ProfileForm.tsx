@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User } from '../../types/auth';
+import { User } from '../../types/user';
 import Input from '../ui/Input';
 import Select from '../ui/Select';
 import Checkbox from '../ui/Checkbox';

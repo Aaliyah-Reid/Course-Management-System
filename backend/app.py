@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 import hashlib
 from werkzeug.exceptions import HTTPException
+from datetime import datetime, date as PyDate
 
 load_dotenv()
 
@@ -189,8 +190,32 @@ def get_courses():
         
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("SELECT coursecode, coursename FROM course")
-            courses = cursor.fetchall()
+            # Modified query to include lecturer's first and last name
+            # Using LEFT JOIN in case a course has no lecturer assigned
+            query = """
+                SELECT c.coursecode, c.coursename, u.FirstName as lecturer_firstname, u.LastName as lecturer_lastname
+                FROM Course c
+                LEFT JOIN Lecturer l ON c.LecturerID = l.LecturerID
+                LEFT JOIN User u ON l.LecturerID = u.UserID
+            """
+            cursor.execute(query)
+            courses_raw = cursor.fetchall()
+            
+            # Combine firstname and lastname for lecturerName
+            courses = []
+            for course_data in courses_raw:
+                lecturer_name = None
+                if course_data['lecturer_firstname'] and course_data['lecturer_lastname']:
+                    lecturer_name = f"{course_data['lecturer_firstname']} {course_data['lecturer_lastname']}"
+                elif course_data['lecturer_firstname']:
+                    lecturer_name = course_data['lecturer_firstname'] # Fallback if only firstname
+                
+                courses.append({
+                    "coursecode": course_data['coursecode'],
+                    "coursename": course_data['coursename'],
+                    "lecturerName": lecturer_name
+                })
+
             return jsonify({'courses': courses}), 200
 
         except mysql.connector.Error as err:
@@ -211,10 +236,30 @@ def get_student_courses(student_id):
         
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("""
-                SELECT c.coursecode, c.coursename FROM Course c JOIN Enrol e ON c.coursecode = e.coursecode
-                WHERE e.UserID = %s""", (student_id,))
-            courses = cursor.fetchall()
+            query = """
+                SELECT c.coursecode, c.coursename, u.FirstName as lecturer_firstname, u.LastName as lecturer_lastname
+                FROM Course c
+                JOIN Enrol e ON c.coursecode = e.coursecode
+                LEFT JOIN Lecturer l ON c.LecturerID = l.LecturerID
+                LEFT JOIN User u ON l.LecturerID = u.UserID
+                WHERE e.UserID = %s
+            """
+            cursor.execute(query, (student_id,))
+            courses_raw = cursor.fetchall()
+
+            courses = []
+            for course_data in courses_raw:
+                lecturer_name = None
+                if course_data['lecturer_firstname'] and course_data['lecturer_lastname']:
+                    lecturer_name = f"{course_data['lecturer_firstname']} {course_data['lecturer_lastname']}"
+                elif course_data['lecturer_firstname']:
+                    lecturer_name = course_data['lecturer_firstname']
+                
+                courses.append({
+                    "coursecode": course_data['coursecode'],
+                    "coursename": course_data['coursename'],
+                    "lecturerName": lecturer_name
+                })
 
             return jsonify({'studentCourses': courses}), 200
 
@@ -236,10 +281,32 @@ def get_lecturer_courses(lecturer_id):
 
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("""
-                SELECT c.coursecode, c.coursename FROM Course c
-                WHERE c.lecturerid = %s""", (lecturer_id,))
-            courses = cursor.fetchall()
+            # The lecturer_id in the Course table is the UserID of the lecturer.
+            # So, we join Course with User table directly where Course.LecturerID = User.UserID
+            query = """
+                SELECT c.coursecode, c.coursename, u.FirstName as lecturer_firstname, u.LastName as lecturer_lastname
+                FROM Course c
+                LEFT JOIN User u ON c.LecturerID = u.UserID
+                WHERE c.lecturerid = %s
+            """
+            cursor.execute(query, (lecturer_id,))
+            courses_raw = cursor.fetchall()
+
+            courses = []
+            # For courses taught by this lecturer, the lecturerName will be their own name.
+            # This might seem redundant for a lecturer viewing their own courses, but it keeps the data structure consistent.
+            for course_data in courses_raw:
+                lecturer_name = None
+                if course_data['lecturer_firstname'] and course_data['lecturer_lastname']:
+                    lecturer_name = f"{course_data['lecturer_firstname']} {course_data['lecturer_lastname']}"
+                elif course_data['lecturer_firstname']:
+                    lecturer_name = course_data['lecturer_firstname']
+                
+                courses.append({
+                    "coursecode": course_data['coursecode'],
+                    "coursename": course_data['coursename'],
+                    "lecturerName": lecturer_name 
+                })
 
             return jsonify({'lecturerCourses': courses}), 200
 
@@ -374,17 +441,68 @@ def get_calendar_events_for_course(course_code):
 
         cursor = conn.cursor(dictionary=True)
         try:
+            # Fetch regular calendar events
             cursor.execute("SELECT eventid, eventname, eventdate FROM calendarevents WHERE coursecode = %s", (course_code,))
-            events = cursor.fetchall()
-            return jsonify({'courseCode': course_code, 'events': events}), 200
+            calendar_events_raw = cursor.fetchall()
+            
+            processed_events = []
+            for event in calendar_events_raw:
+                processed_events.append({
+                    'eventid': f"event-{event['eventid']}",
+                    'eventname': event['eventname'],
+                    'eventdate': event['eventdate'],
+                    'type': 'event'
+                })
+
+            # Fetch assignments
+            cursor.execute("SELECT assignmentid, content, duedate FROM assignment WHERE coursecode = %s", (course_code,))
+            assignments_raw = cursor.fetchall()
+
+            for assign in assignments_raw:
+                if assign['duedate']:
+                    processed_events.append({
+                        'eventid': f"assignment-{assign['assignmentid']}",
+                        'eventname': f"Assignment Due: {assign['content']}",
+                        'eventdate': assign['duedate'],
+                        'type': 'assignment'
+                    })
+            
+            def get_date_obj(event_item):
+                date_val = event_item['eventdate']
+                if date_val is None:
+                    print(f"Warning: Event item {event_item.get('eventid')} has None date.")
+                    return datetime.max
+                if isinstance(date_val, datetime):
+                    return date_val
+                if isinstance(date_val, PyDate):
+                    return datetime.combine(date_val, datetime.min.time())
+                if isinstance(date_val, str):
+                    try:
+                        # Handle potential 'Z' for UTC timezone info if present
+                        return datetime.fromisoformat(date_val.replace('Z', '+00:00'))
+                    except ValueError as e:
+                        print(f"Warning: Could not parse date string '{date_val}' for event {event_item.get('eventid')}: {e}")
+                        return datetime.max
+                
+                print(f"Warning: Unknown date type for event {event_item.get('eventid')}: {type(date_val)}")
+                return datetime.max
+
+            processed_events.sort(key=get_date_obj)
+
+            return jsonify({'courseCode': course_code, 'events': processed_events}), 200
 
         except mysql.connector.Error as err:
+            print(f"Database error in get_calendar_events_for_course: {err}")
             return jsonify({'error': f'Failed to retrieve calendar events: {str(err)}'}), 500
-
+        except Exception as e:
+            print(f"Unexpected error in get_calendar_events_for_course: {e}")
+            return jsonify({'error': 'An internal error occurred while fetching calendar events.'}), 500
         finally:
-            cursor.close()
-            conn.close()
+            if conn and conn.is_connected():
+                cursor.close()
+                conn.close()
     except Exception as e:
+        print(f"Outer error in get_calendar_events_for_course: {e}")
         return jsonify({'error': 'Unexpected error during calendar event retrieval.'}), 500
 
 @app.route('/calendar_events/student', methods=['GET'])
@@ -523,6 +641,64 @@ def create_forum():
     except Exception as e:
         return jsonify({'error': 'Unexpected error during forum creation.'}), 500
 
+@app.route('/forums/student/<int:student_id>', methods=['GET'])
+def get_student_forums(student_id):
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        
+        cursor = conn.cursor(dictionary=True)
+        try:
+            # First, check if student exists
+            cursor.execute("SELECT studentid FROM Student WHERE studentid = %s", (student_id,))
+            if cursor.fetchone() is None:
+                return jsonify({'error': 'Student not found'}), 404
+
+            # Get courses the student is enrolled in
+            cursor.execute("""
+                SELECT c.coursecode, c.coursename 
+                FROM Course c 
+                JOIN Enrol e ON c.coursecode = e.coursecode
+                WHERE e.UserID = %s
+            """, (student_id,))
+            courses = cursor.fetchall()
+
+            student_forums_data = []
+            if courses: # Ensure courses is not None and not empty
+                for course in courses:
+                    course_code = course['coursecode']
+                    course_name = course['coursename']
+                    
+                    # Get forums for this course
+                    cursor.execute("""
+                        SELECT forumid, forumname 
+                        FROM discussionforum 
+                        WHERE coursecode = %s
+                    """, (course_code,))
+                    forums_for_course = cursor.fetchall()
+                    
+                    student_forums_data.append({
+                        "courseCode": course_code,
+                        "courseName": course_name,
+                        "forums": forums_for_course
+                    })
+
+            return jsonify({'studentId': student_id, 'courses_forums': student_forums_data}), 200
+
+        except mysql.connector.Error as err:
+            # It's good practice to log the error server-side
+            print(f"Database error in get_student_forums for student {student_id}: {err}")
+            return jsonify({'error': f'Failed to retrieve student forums: {str(err)}'}), 500
+        finally:
+            if conn and conn.is_connected(): # Check if conn was successfully established and is still connected
+                cursor.close()
+                conn.close()
+    except Exception as e:
+        # Log the exception e for debugging
+        print(f"Unexpected error in get_student_forums for student {student_id}: {e}")
+        return jsonify({'error': 'Unexpected error during student forum retrieval.'}), 500
+
 @app.route('/threads/<int:forum_id>', methods=['GET'])
 def get_threads(forum_id):
     sort = request.args.get('sort', 'new')  # 'new' or 'top'
@@ -536,9 +712,10 @@ def get_threads(forum_id):
             if sort == 'top':
                 cursor.execute("""
                     SELECT t.threadid, t.threadtitle, t.content, t.createdby, t.createdat, t.updatedat,
-                        COALESCE(SUM(v.vote), 0) AS votes
+                        u.firstname, u.lastname, COALESCE(SUM(v.vote), 0) AS votes
                     FROM discussionthread t
                     LEFT JOIN threadvote v ON t.threadid = v.threadid
+                    LEFT JOIN user u ON t.createdby = u.userid
                     WHERE t.forumid = %s
                     GROUP BY t.threadid
                     ORDER BY votes DESC, t.createdat DESC
@@ -546,9 +723,10 @@ def get_threads(forum_id):
             else:
                 cursor.execute("""
                     SELECT t.threadid, t.threadtitle, t.content, t.createdby, t.createdat, t.updatedat,
-                        COALESCE(SUM(v.vote), 0) AS votes
+                        u.firstname, u.lastname, COALESCE(SUM(v.vote), 0) AS votes
                     FROM discussionthread t
                     LEFT JOIN threadvote v ON t.threadid = v.threadid
+                    LEFT JOIN user u ON t.createdby = u.userid
                     WHERE t.forumid = %s
                     GROUP BY t.threadid
                     ORDER BY t.createdat DESC
@@ -579,9 +757,10 @@ def get_thread_replies(thread_id):
         try:
             cursor.execute("""
                 SELECT r.replyid, r.parentreplyid, r.content, r.createdby, r.replydate,
-                    COALESCE(SUM(rv.vote), 0) AS votes
+                    u.firstname, u.lastname, COALESCE(SUM(rv.vote), 0) AS votes
                 FROM reply r
                 LEFT JOIN replyvote rv ON r.replyid = rv.replyid
+                LEFT JOIN user u ON r.createdby = u.userid
                 WHERE r.threadid = %s
                 GROUP BY r.replyid
                 ORDER BY r.replydate ASC
@@ -622,9 +801,10 @@ def get_thread_replies_flat(thread_id):
         try:
             cursor.execute("""
                 SELECT r.replyid, r.parentreplyid, r.content, r.createdby, r.replydate,
-                    COALESCE(SUM(rv.vote), 0) AS votes
+                    u.firstname, u.lastname, COALESCE(SUM(rv.vote), 0) AS votes
                 FROM reply r
                 LEFT JOIN replyvote rv ON r.replyid = rv.replyid
+                LEFT JOIN user u ON r.createdby = u.userid
                 WHERE r.threadid = %s
                 GROUP BY r.replyid
                 ORDER BY r.replydate ASC
@@ -891,6 +1071,233 @@ def grade_assignment():
     except Exception as e:
         return jsonify({'error': 'Unexpected error during assignment grading.'}), 500
 
+@app.route('/student/<int:student_id>/grades', methods=['GET'])
+def get_student_grades(student_id):
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        cursor = conn.cursor(dictionary=True)
+        try:
+            # Check if student exists
+            cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+            if cursor.fetchone() is None:
+                return jsonify({'error': 'Student not found'}), 404
+
+            query = """
+                SELECT
+                    c.coursecode,
+                    c.coursename,
+                    a.assignmentid,
+                    a.content AS assignmentcontent,
+                    a.duedate AS assignmentduedate,
+                    s.submissionid,
+                    s.submissioncontent,
+                    s.uploaddate AS submissiondate,
+                    g.score
+                FROM enrol e
+                JOIN course c ON e.coursecode = c.coursecode
+                JOIN assignment a ON c.coursecode = a.coursecode
+                LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
+                LEFT JOIN grade g ON s.submissionid = g.submissionid
+                WHERE e.userid = %s
+                ORDER BY c.coursecode, a.duedate;
+            """
+            cursor.execute(query, (student_id,))
+            grades = cursor.fetchall()
+            return jsonify({'studentGrades': grades}), 200
+        except mysql.connector.Error as err:
+            return jsonify({'error': f'Failed to retrieve student grades: {str(err)}'}), 500
+        finally:
+            cursor.close()
+            conn.close()
+    except Exception as e:
+        return jsonify({'error': 'Unexpected error while fetching student grades.'}), 500
+
+@app.route('/assignments/student/<int:student_id>', methods=['GET'])
+def get_student_assignments_with_submissions(student_id):
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        cursor = conn.cursor(dictionary=True)
+
+        # First, check if student exists
+        cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+        if cursor.fetchone() is None:
+            return jsonify({'error': 'Student not found'}), 404
+
+        # Fetch all assignments for courses the student is enrolled in,
+        # along with their submission details (if any) and grades (if any)
+        query = """
+            SELECT
+                c.coursecode,
+                c.coursename,
+                a.assignmentid,
+                a.content AS assignment_content,
+                a.duedate AS assignment_duedate,
+                s.submissionid,
+                s.submissioncontent,
+                s.uploaddate AS submission_uploaddate,
+                g.score
+            FROM enrol e
+            JOIN course c ON e.coursecode = c.coursecode
+            JOIN assignment a ON c.coursecode = a.coursecode
+            LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
+            LEFT JOIN grade g ON s.submissionid = g.submissionid
+            WHERE e.userid = %s
+            ORDER BY c.coursecode, a.duedate;
+        """
+        cursor.execute(query, (student_id,))
+        results = cursor.fetchall()
+
+        assignments_with_submissions = []
+        for row in results:
+            submission_details = None
+            if row['submissionid']:
+                submission_details = {
+                    'submissionid': row['submissionid'],
+                    'submissioncontent': row['submissioncontent'],
+                    'uploaddate': row['submission_uploaddate'].isoformat() if row['submission_uploaddate'] else None,
+                    'score': row['score']
+                }
+            
+            assignments_with_submissions.append({
+                'coursecode': row['coursecode'],
+                'coursename': row['coursename'],
+                'assignmentid': row['assignmentid'],
+                'content': row['assignment_content'],
+                'duedate': row['assignment_duedate'].isoformat() if row['assignment_duedate'] else None,
+                'submission': submission_details
+            })
+
+        return jsonify({'student_assignments': assignments_with_submissions}), 200
+
+    except mysql.connector.Error as err:
+        print(f"DB Error in get_student_assignments_with_submissions: {err}")
+        return jsonify({'error': f'Failed to retrieve student assignments: {str(err)}'}), 500
+    except Exception as e:
+        print(f"Error in get_student_assignments_with_submissions: {e}")
+        return jsonify({'error': 'An unexpected error occurred while fetching student assignments.'}), 500
+    finally:
+        if conn and conn.is_connected():
+            cursor.close()
+            conn.close()
+
+@app.route('/assignments/course/<string:course_code>/student/<int:student_id>', methods=['GET'])
+def get_course_assignments_for_student(course_code, student_id):
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        cursor = conn.cursor(dictionary=True)
+
+        # Check if student exists
+        cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+        if cursor.fetchone() is None:
+            return jsonify({'error': 'Student not found'}), 404
+
+        # Check if course exists
+        cursor.execute("SELECT coursecode FROM course WHERE coursecode = %s", (course_code,))
+        if cursor.fetchone() is None:
+            return jsonify({'error': 'Course not found'}), 404
+
+        # Fetch assignments for the course and the student's submission details
+        query = """
+            SELECT
+                a.assignmentid,
+                a.content AS assignment_content,
+                a.duedate AS assignment_duedate,
+                s.submissionid,
+                s.submissioncontent,
+                s.uploaddate AS submission_uploaddate,
+                g.score
+            FROM assignment a
+            LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = %s
+            LEFT JOIN grade g ON s.submissionid = g.submissionid
+            WHERE a.coursecode = %s
+            ORDER BY a.duedate;
+        """
+        cursor.execute(query, (student_id, course_code))
+        results = cursor.fetchall()
+
+        course_assignments = []
+        for row in results:
+            submission_details = None
+            if row['submissionid']:
+                submission_details = {
+                    'submissionid': row['submissionid'],
+                    'submissioncontent': row['submissioncontent'],
+                    'uploaddate': row['submission_uploaddate'].isoformat() if row['submission_uploaddate'] else None,
+                    'score': row['score']
+                }
+            
+            course_assignments.append({
+                'assignmentid': row['assignmentid'],
+                'content': row['assignment_content'],
+                'duedate': row['assignment_duedate'].isoformat() if row['assignment_duedate'] else None,
+                'submission': submission_details
+            })
+
+        return jsonify({'course_assignments': course_assignments}), 200
+
+    except mysql.connector.Error as err:
+        print(f"DB Error in get_course_assignments_for_student: {err}")
+        return jsonify({'error': f'Failed to retrieve course assignments for student: {str(err)}'}), 500
+    except Exception as e:
+        print(f"Error in get_course_assignments_for_student: {e}")
+        return jsonify({'error': 'An unexpected error occurred while fetching course assignments.'}), 500
+    finally:
+        if conn and conn.is_connected():
+            cursor.close()
+            conn.close()
+
+@app.route('/lecturer/<int:lecturer_id>/course_grades', methods=['GET'])
+def get_lecturer_course_grades(lecturer_id):
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        cursor = conn.cursor(dictionary=True)
+        try:
+            # Check if lecturer exists
+            cursor.execute("SELECT lecturerid FROM lecturer WHERE lecturerid = %s", (lecturer_id,))
+            if cursor.fetchone() is None:
+                return jsonify({'error': 'Lecturer not found'}), 404
+
+            query = """
+                SELECT
+                    c.coursecode,
+                    c.coursename,
+                    a.assignmentid,
+                    a.content AS assignmentcontent,
+                    a.duedate AS assignmentduedate,
+                    s.submissionid,
+                    s.studentid,
+                    u.firstname AS studentfirstname,
+                    u.lastname AS studentlastname,
+                    s.submissioncontent,
+                    s.uploaddate AS submissiondate,
+                    g.score
+                FROM course c
+                JOIN assignment a ON c.coursecode = a.coursecode
+                LEFT JOIN submission s ON a.assignmentid = s.assignmentid
+                LEFT JOIN user u ON s.studentid = u.userid
+                LEFT JOIN grade g ON s.submissionid = g.submissionid
+                WHERE c.lecturerid = %s
+                ORDER BY c.coursecode, a.duedate, s.studentid;
+            """
+            cursor.execute(query, (lecturer_id,))
+            course_grades = cursor.fetchall()
+            return jsonify({'lecturerCourseGrades': course_grades}), 200
+        except mysql.connector.Error as err:
+            return jsonify({'error': f'Failed to retrieve lecturer course grades: {str(err)}'}), 500
+        finally:
+            cursor.close()
+            conn.close()
+    except Exception as e:
+        return jsonify({'error': 'Unexpected error while fetching lecturer course grades.'}), 500
+
 @app.route('/reports/popular_courses', methods=['GET'])
 def get_popular_courses():
     try:
@@ -1041,6 +1448,81 @@ def get_top_students():
             conn.close()
     except Exception as e:
         return jsonify({'error': 'Unexpected error during top students report.'}), 500
+
+@app.route('/reply_thread', methods=['POST'])
+def reply_to_thread():
+    """
+    Creates a new reply to a thread or to another reply.
+    
+    Expected request body:
+    {
+        "threadId": int,
+        "parentReplyId": int or null,
+        "content": string,
+        "createdBy": int (user ID)
+    }
+    """
+    try:
+        data = request.get_json()
+        thread_id = data.get('threadId')
+        parent_reply_id = data.get('parentReplyId')  # Can be None for top-level replies
+        content = data.get('content')
+        created_by = data.get('createdBy')
+
+        # Validate required fields
+        if not thread_id or not content or not created_by:
+            return jsonify({'error': 'Missing required fields: threadId, content, and createdBy are required'}), 400
+        
+        # Validate the thread exists
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'error': 'Database connection failed'}), 500
+        
+        cursor = conn.cursor(dictionary=True)
+        try:
+            # Check if thread exists
+            cursor.execute("SELECT threadid FROM discussionthread WHERE threadid = %s", (thread_id,))
+            thread = cursor.fetchone()
+            if not thread:
+                return jsonify({'error': 'Thread not found'}), 404
+            
+            # Check if parent reply exists (if provided)
+            if parent_reply_id:
+                cursor.execute("SELECT replyid FROM reply WHERE replyid = %s AND threadid = %s", 
+                               (parent_reply_id, thread_id))
+                parent_reply = cursor.fetchone()
+                if not parent_reply:
+                    return jsonify({'error': 'Parent reply not found or does not belong to this thread'}), 404
+            
+            # Check if user exists
+            cursor.execute("SELECT userid FROM user WHERE userid = %s", (created_by,))
+            user = cursor.fetchone()
+            if not user:
+                return jsonify({'error': 'User not found'}), 404
+            
+            # Insert the reply
+            insert_query = """
+                INSERT INTO reply (threadid, parentreplyid, content, createdby, replydate)
+                VALUES (%s, %s, %s, %s, NOW())
+            """
+            cursor.execute(insert_query, (thread_id, parent_reply_id, content, created_by))
+            conn.commit()
+            
+            reply_id = cursor.lastrowid
+            
+            return jsonify({
+                'message': 'Reply posted successfully',
+                'replyId': reply_id
+            }), 201
+            
+        except mysql.connector.Error as err:
+            conn.rollback()
+            return jsonify({'error': f'Failed to post reply: {str(err)}'}), 500
+        finally:
+            cursor.close()
+            conn.close()
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error during reply posting: {str(e)}'}), 500
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

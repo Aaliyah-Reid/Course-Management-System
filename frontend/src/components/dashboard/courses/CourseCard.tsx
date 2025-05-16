@@ -37,9 +37,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isGridView, onClick }) 
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-medium text-theme-text">{course.name}</h3>
+            <h3 className="text-lg font-medium text-theme-text">{course.coursename}</h3>
             <p className="text-sm text-theme-text/70">
-              {course.code} • Last accessed {format(new Date(course.lastAccessed), 'MMM d, yyyy')}
+              {course.coursecode} {course.lecturerName ? `• ${course.lecturerName}` : '• No lecturer assigned'}
             </p>
           </div>
         </div>
@@ -73,10 +73,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isGridView, onClick }) 
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-medium text-theme-text">{course.name}</h3>
-        <p className="text-sm text-theme-text/70 mt-1">{course.code}</p>
+        <h3 className="text-lg font-medium text-theme-text">{course.coursename}</h3>
+        <p className="text-sm text-theme-text/70 mt-1">{course.coursecode}</p>
         <p className="text-xs text-theme-text/50 mt-2">
-          Last accessed {format(new Date(course.lastAccessed), 'MMM d, yyyy')}
+          {course.lecturerName ? `Lecturer: ${course.lecturerName}` : 'No lecturer assigned'}
         </p>
         <button className="mt-4 w-full flex items-center justify-center px-4 py-2 rounded-md shadow-sm text-sm font-medium text-white bg-theme-secondary hover:bg-theme-secondary/90 transition-colors">
           Open Course

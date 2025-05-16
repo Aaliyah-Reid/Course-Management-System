@@ -16,13 +16,13 @@ export interface User {
 }
 
 export interface LoginFormData {
-  email: string;
+  userId: string;
   password: string;
   rememberMe: boolean;
 }
 
 export interface LoginFormErrors {
-  email?: string;
+  userId?: string;
   password?: string;
   general?: string;
 }
