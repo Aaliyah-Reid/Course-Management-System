@@ -160,7 +160,7 @@ def create_course():
                 return jsonify({'error': 'Not an administrator'}), 403
 
             if lecturer_id:
-                cursor.execute("SELECT COUNT(*) FROM course WHERE lecturerid = %s", (lecturer_id,))
+                cursor.execute("SELECT COUNT(*) FROM Course WHERE lecturerid = %s", (lecturer_id,))
                 lecturer_course_count = cursor.fetchone()[0]
                 if lecturer_course_count >= 5:
                     return jsonify({'error': 'Lecturer cannot be assigned to more than 5 courses'}), 403
@@ -567,7 +567,7 @@ def create_calendar_event():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT coursecode FROM course WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT coursecode FROM Course WHERE coursecode = %s", (course_code,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Course does not exist'}), 404
 
