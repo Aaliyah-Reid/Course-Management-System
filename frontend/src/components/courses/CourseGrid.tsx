@@ -42,19 +42,19 @@ const CourseGrid: React.FC<CourseGridProps> = ({
     const fetchCourses = async () => {
       try {
         setIsLoading(true);
-        let url = 'http://localhost:5000/courses'; // Default URL
+        let url = 'http://134.199.222.77:5000/courses'; // Default URL
         let responseDataField = 'courses'; // Default field in response
 
         if (userId && userType) {
           if (userType === 'student') {
-            url = `http://localhost:5000/courses/student/${userId}`;
+            url = `http://134.199.222.77:5000/courses/student/${userId}`;
             responseDataField = 'studentCourses';
           } else if (userType === 'lecturer') {
-            url = `http://localhost:5000/courses/lecturer/${userId}`;
+            url = `http://134.199.222.77:5000/courses/lecturer/${userId}`;
             responseDataField = 'lecturerCourses';
           } else if (userType === 'admin') {
             // Admins see all courses, so we use the default /courses endpoint
-             url = 'http://localhost:5000/courses';
+             url = 'http://134.199.222.77:5000/courses';
              responseDataField = 'courses';
           }
         } else {

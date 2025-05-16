@@ -34,9 +34,9 @@ const ForumPage: React.FC<ForumPageProps> = ({ currentUser }) => {
       setErrorCourses(null);
       let coursesUrl = '';
       if (currentUser.userType === 'student') {
-        coursesUrl = `http://localhost:5000/courses/student/${currentUser.id}`;
+        coursesUrl = `http://134.199.222.77:5000/courses/student/${currentUser.id}`;
       } else if (currentUser.userType === 'lecturer') {
-        coursesUrl = `http://localhost:5000/courses/lecturer/${currentUser.id}`;
+        coursesUrl = `http://134.199.222.77:5000/courses/lecturer/${currentUser.id}`;
       } else {
         // Admins might see all courses or a different view, handle as needed
         // For now, let's assume admins don't use this page this way or show no courses

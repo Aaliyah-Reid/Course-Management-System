@@ -27,7 +27,7 @@ const CourseAssignments: React.FC<CourseAssignmentsProps> = ({ courseCode }) => 
     const fetchAssignments = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5000/assignments/${courseCode}`);
+        const response = await fetch(`http://134.199.222.77:5000/assignments/${courseCode}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

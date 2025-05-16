@@ -17,7 +17,7 @@ const CourseParticipants: React.FC<CourseParticipantsProps> = ({ courseCode }) =
     const fetchParticipants = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5000/course_members/${courseCode}`);
+        const response = await fetch(`http://134.199.222.77:5000/course_members/${courseCode}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

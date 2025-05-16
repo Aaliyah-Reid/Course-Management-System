@@ -42,7 +42,7 @@ const ThreadList: React.FC<ThreadListProps> = ({
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:5000/threads/${forum.id}`);
+      const response = await fetch(`http://134.199.222.77:5000/threads/${forum.id}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch threads: ${response.statusText}`);
       }
@@ -88,7 +88,7 @@ const ThreadList: React.FC<ThreadListProps> = ({
       return;
     }
     try {
-      const response = await fetch('http://localhost:5000/vote/thread', {
+      const response = await fetch('http://134.199.222.77:5000/vote/thread', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ threadId: threadId, userId: currentUser.id, vote: vote }),

@@ -22,7 +22,7 @@ const ForumList: React.FC<ForumListProps> = ({ courseCode, onForumSelect, userId
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`http://localhost:5000/forums/${courseCode}`);
+        const response = await fetch(`http://134.199.222.77:5000/forums/${courseCode}`);
         if (!response.ok) {
           throw new Error(`Failed to fetch forums: ${response.statusText}`);
         }

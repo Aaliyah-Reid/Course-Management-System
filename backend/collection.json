@@ -11,7 +11,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/health", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["health"] }
+        "url": { "raw": "http://134.199.222.77:5000/health", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["health"] }
       }
     },
     {
@@ -23,7 +23,7 @@
           "mode": "raw",
           "raw": "{\n  \"userId\": 620200001,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"password\": \"password123\",\n  \"userType\": \"student\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/register", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["register"] }
+        "url": { "raw": "http://134.199.222.77:5000/register", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["register"] }
       }
     },
     {
@@ -35,7 +35,7 @@
           "mode": "raw",
           "raw": "{\n  \"userId\": 620200001,\n  \"password\": \"password123\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["login"] }
+        "url": { "raw": "http://134.199.222.77:5000/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["login"] }
       }
     },
     {
@@ -47,7 +47,7 @@
           "mode": "raw",
           "raw": "{\n  \"adminId\": 100000001,\n  \"courseCode\": \"COMP3540\",\n  \"courseName\": \"Introduction to Quantum Dynamics\",\n  \"lecturerId\": 300000001\n}"
         },
-        "url": { "raw": "http://localhost:5000/create_course", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_course"] }
+        "url": { "raw": "http://134.199.222.77:5000/create_course", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_course"] }
       }
     },
     {
@@ -55,7 +55,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses"] }
+        "url": { "raw": "http://134.199.222.77:5000/courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses"] }
       }
     },
     {
@@ -63,7 +63,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/courses/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "student", "620200001"] }
+        "url": { "raw": "http://134.199.222.77:5000/courses/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "student", "620200001"] }
       }
     },
     {
@@ -71,7 +71,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/courses/lecturer/300000001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "lecturer", "300000001"] }
+        "url": { "raw": "http://134.199.222.77:5000/courses/lecturer/300000001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["courses", "lecturer", "300000001"] }
       }
     },
     {
@@ -83,7 +83,7 @@
           "mode": "raw",
           "raw": "{\n  \"lecturerId\": 300000001,\n  \"courseCode\": \"COMP3540\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/assign_lecturer", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_lecturer"] }
+        "url": { "raw": "http://134.199.222.77:5000/assign_lecturer", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_lecturer"] }
       }
     },
     {
@@ -95,7 +95,7 @@
           "mode": "raw",
           "raw": "{\n  \"studentId\": 620200001,\n  \"courseCode\": \"COMP3540\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/assign_student", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_student"] }
+        "url": { "raw": "http://134.199.222.77:5000/assign_student", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assign_student"] }
       }
     },
     {
@@ -103,7 +103,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/course_members/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_members", "COMP3540"] }
+        "url": { "raw": "http://134.199.222.77:5000/course_members/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_members", "COMP3540"] }
       }
     },
     {
@@ -111,7 +111,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/calendar_events/course/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["calendar_events", "course", "COMP3540"] }
+        "url": { "raw": "http://134.199.222.77:5000/calendar_events/course/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["calendar_events", "course", "COMP3540"] }
       }
     },
     {
@@ -120,7 +120,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:5000/calendar_events/student?studentId=620200001&eventDate=2025-05-01",
+          "raw": "http://134.199.222.77:5000/calendar_events/student?studentId=620200001&eventDate=2025-05-01",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
@@ -141,7 +141,7 @@
           "mode": "raw",
           "raw": "{\n  \"courseCode\": \"COMP3540\",\n  \"eventName\": \"Assignment 1\",\n  \"eventDate\": \"2025-05-01\",\n  \"createdBy\": 100000001\n}"
         },
-        "url": { "raw": "http://localhost:5000/create_calendar_event", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_calendar_event"] }
+        "url": { "raw": "http://134.199.222.77:5000/create_calendar_event", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_calendar_event"] }
       }
     },
     {
@@ -149,7 +149,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/forums/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "COMP3540"] }
+        "url": { "raw": "http://134.199.222.77:5000/forums/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "COMP3540"] }
       }
     },
     {
@@ -157,7 +157,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/forums/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "student", "620200001"] }
+        "url": { "raw": "http://134.199.222.77:5000/forums/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "student", "620200001"] }
       }
     },
     {
@@ -169,7 +169,7 @@
           "mode": "raw",
           "raw": "{\n  \"courseCode\": \"COMP3540\",\n  \"forumName\": \"General Discussion\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/create_forum", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_forum"] }
+        "url": { "raw": "http://134.199.222.77:5000/create_forum", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_forum"] }
       }
     },
     {
@@ -177,7 +177,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/threads/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["threads", "1"] }
+        "url": { "raw": "http://134.199.222.77:5000/threads/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["threads", "1"] }
       }
     },
     {
@@ -189,7 +189,7 @@
           "mode": "raw",
           "raw": "{\n  \"forumId\": 1,\n  \"threadTitle\": \"Welcome\",\n  \"content\": \"Welcome to the forum!\",\n  \"createdBy\": 620200001\n}"
         },
-        "url": { "raw": "http://localhost:5000/create_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_thread"] }
+        "url": { "raw": "http://134.199.222.77:5000/create_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["create_thread"] }
       }
     },
     {
@@ -201,7 +201,7 @@
           "mode": "raw",
           "raw": "{\n  \"threadId\": 1,\n  \"parentReplyId\": null,\n  \"content\": \"Thanks!\",\n  \"createdBy\": 300000001\n}"
         },
-        "url": { "raw": "http://localhost:5000/reply_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reply_thread"] }
+        "url": { "raw": "http://134.199.222.77:5000/reply_thread", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reply_thread"] }
       }
     },
     {
@@ -214,7 +214,7 @@
           "raw": "{\n  \"threadId\": 1,\n  \"userId\": 620200001,\n  \"vote\": 1\n}"
         },
         "url": {
-          "raw": "http://localhost:5000/vote/thread",
+          "raw": "http://134.199.222.77:5000/vote/thread",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
@@ -232,7 +232,7 @@
           "raw": "{\n  \"replyId\": 1,\n  \"userId\": 620200001,\n  \"vote\": -1\n}"
         },
         "url": {
-          "raw": "http://localhost:5000/vote/reply",
+          "raw": "http://134.199.222.77:5000/vote/reply",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
@@ -246,7 +246,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:5000/thread/1/replies",
+          "raw": "http://134.199.222.77:5000/thread/1/replies",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
@@ -260,7 +260,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:5000/thread/1/replies_flat",
+          "raw": "http://134.199.222.77:5000/thread/1/replies_flat",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
@@ -273,7 +273,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/course_content/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_content", "COMP3540"] }
+        "url": { "raw": "http://134.199.222.77:5000/course_content/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["course_content", "COMP3540"] }
       }
     },
     {
@@ -285,7 +285,7 @@
           "mode": "raw",
           "raw": "{\n  \"sectionId\": 1,\n  \"itemTitle\": \"Lecture Slides\",\n  \"link\": \"http://example.com/slides.pdf\",\n  \"filename\": \"slides.pdf\",\n  \"description\": \"Week 1 slides\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/add_course_content", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["add_course_content"] }
+        "url": { "raw": "http://134.199.222.77:5000/add_course_content", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["add_course_content"] }
       }
     },
     {
@@ -293,7 +293,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/assignments/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "COMP3540"] }
+        "url": { "raw": "http://134.199.222.77:5000/assignments/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "COMP3540"] }
       }
     },
     {
@@ -301,7 +301,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/assignments/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "student", "620200001"] }
+        "url": { "raw": "http://134.199.222.77:5000/assignments/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "student", "620200001"] }
       }
     },
     {
@@ -309,7 +309,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/assignments/course/COMP3540/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "course", "COMP3540", "student", "620200001"] }
+        "url": { "raw": "http://134.199.222.77:5000/assignments/course/COMP3540/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "course", "COMP3540", "student", "620200001"] }
       }
     },
     {
@@ -321,7 +321,7 @@
           "mode": "raw",
           "raw": "{\n  \"studentId\": 620200001,\n  \"assignmentId\": 1,\n  \"submissionContent\": \"My answer\"\n}"
         },
-        "url": { "raw": "http://localhost:5000/submit_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["submit_assignment"] }
+        "url": { "raw": "http://134.199.222.77:5000/submit_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["submit_assignment"] }
       }
     },
     {
@@ -333,7 +333,7 @@
           "mode": "raw",
           "raw": "{\n  \"submissionId\": 1,\n  \"lecturerId\": 300000001,\n  \"score\": 95\n}"
         },
-        "url": { "raw": "http://localhost:5000/grade_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["grade_assignment"] }
+        "url": { "raw": "http://134.199.222.77:5000/grade_assignment", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["grade_assignment"] }
       }
     },
     {
@@ -341,7 +341,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/reports/popular_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "popular_courses"] }
+        "url": { "raw": "http://134.199.222.77:5000/reports/popular_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "popular_courses"] }
       }
     },
     {
@@ -349,7 +349,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/reports/active_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "active_students"] }
+        "url": { "raw": "http://134.199.222.77:5000/reports/active_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "active_students"] }
       }
     },
     {
@@ -357,7 +357,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/reports/busy_lecturers", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "busy_lecturers"] }
+        "url": { "raw": "http://134.199.222.77:5000/reports/busy_lecturers", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "busy_lecturers"] }
       }
     },
     {
@@ -365,7 +365,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/reports/top_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_courses"] }
+        "url": { "raw": "http://134.199.222.77:5000/reports/top_courses", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_courses"] }
       }
     },
     {
@@ -373,7 +373,7 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": { "raw": "http://localhost:5000/reports/top_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_students"] }
+        "url": { "raw": "http://134.199.222.77:5000/reports/top_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_students"] }
       }
     },
     {
@@ -382,7 +382,7 @@
         "method": "GET",
         "header": [],
         "url": { 
-          "raw": "http://localhost:5000/student/620100000/grades", 
+          "raw": "http://134.199.222.77:5000/student/620100000/grades", 
           "protocol": "http", 
           "host": ["localhost"], 
           "port": "5000", 
@@ -396,7 +396,7 @@
         "method": "GET",
         "header": [],
         "url": { 
-          "raw": "http://localhost:5000/lecturer/300000000/course_grades", 
+          "raw": "http://134.199.222.77:5000/lecturer/300000000/course_grades", 
           "protocol": "http", 
           "host": ["localhost"], 
           "port": "5000", 

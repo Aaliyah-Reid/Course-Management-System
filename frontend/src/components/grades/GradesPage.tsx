@@ -24,9 +24,9 @@ const GradesPage: React.FC<GradesPageProps> = ({ currentUser }) => {
       let url = '';
 
       if (currentUser.userType === 'student') {
-        url = `http://localhost:5000/student/${currentUser.id}/grades`;
+        url = `http://134.199.222.77:5000/student/${currentUser.id}/grades`;
       } else if (currentUser.userType === 'lecturer') {
-        url = `http://localhost:5000/lecturer/${currentUser.id}/course_grades`;
+        url = `http://134.199.222.77:5000/lecturer/${currentUser.id}/course_grades`;
       } else {
         setError('Grade view is only available for students and lecturers.');
         setIsLoading(false);

@@ -41,8 +41,8 @@ const CalendarPage: React.FC<CalendarPageProps> = ({ onCourseSelect, userId, use
       setError(null);
       try {
         const url = userType === 'student' 
-          ? `http://localhost:5000/courses/student/${userId}` 
-          : `http://localhost:5000/courses/lecturer/${userId}`;
+          ? `http://134.199.222.77:5000/courses/student/${userId}` 
+          : `http://134.199.222.77:5000/courses/lecturer/${userId}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch user courses: ${response.statusText}`);
         const data = await response.json();
@@ -67,7 +67,7 @@ const CalendarPage: React.FC<CalendarPageProps> = ({ onCourseSelect, userId, use
     const fetchAllEventsForCourse = async (courseCode: string): Promise<CalendarEvent[]> => {
       if (selectedCourseFilter === courseCode) setError(null);
 
-      const response = await fetch(`http://localhost:5000/calendar_events/course/${courseCode}`);
+      const response = await fetch(`http://134.199.222.77:5000/calendar_events/course/${courseCode}`);
       if (!response.ok) {
         const errorMsg = `Failed to fetch events for course ${courseCode}: ${response.statusText}`;
         if (selectedCourseFilter === courseCode) setError(errorMsg);

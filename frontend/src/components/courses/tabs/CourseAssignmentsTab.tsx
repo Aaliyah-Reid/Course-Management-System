@@ -46,7 +46,7 @@ const CourseAssignmentsTab: React.FC<CourseAssignmentsTabProps> = ({ courseCode,
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:5000/assignments/course/${courseCode}/student/${userId}`);
+      const response = await fetch(`http://134.199.222.77:5000/assignments/course/${courseCode}/student/${userId}`);
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(`Failed to fetch assignments for course ${courseCode}: ${response.statusText} - ${errorData.error || 'Server error'}`);

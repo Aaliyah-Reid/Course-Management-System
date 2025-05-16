@@ -36,7 +36,7 @@ const SubmissionModal: React.FC<SubmissionModalProps> = ({
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/submit_assignment', {
+      const response = await fetch('http://134.199.222.77:5000/submit_assignment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

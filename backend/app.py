@@ -87,7 +87,7 @@ def register_user():
                 cursor.execute(insert_admin_query, (new_user_id,))
             else:
                 conn.rollback()
-                return jsonify({'error': 'Invalid user type'}), 400
+                return jsonify({'error': 'Invalid User type'}), 400
 
             conn.commit()
             
@@ -122,10 +122,10 @@ def login():
         cursor = conn.cursor(dictionary=True)  
         try:
             cursor.execute("SELECT userid, password FROM User WHERE userid = %s", (user_id,))
-            user = cursor.fetchone()
+            User = cursor.fetchone()
 
-            if user and user.get('password') == hashlib.sha256(password.encode('utf-8')).hexdigest():
-                return jsonify({'message': 'Login successful', 'userId': user['userid']}), 200
+            if User and User.get('password') == hashlib.sha256(password.encode('utf-8')).hexdigest():
+                return jsonify({'message': 'Login successful', 'userId': User['userid']}), 200
             else:
                 return jsonify({'error': 'Invalid credentials'}), 401
 
@@ -155,7 +155,7 @@ def create_course():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT adminid FROM admin WHERE adminid = %s", (admin_id,))
+            cursor.execute("SELECT adminid FROM Admin WHERE adminid = %s", (admin_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Not an administrator'}), 403
 
@@ -333,7 +333,7 @@ def assign_lecturer():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT lecturerid FROM lecturer WHERE lecturerid = %s", (lecturer_id,))
+            cursor.execute("SELECT lecturerid FROM Lecturer WHERE lecturerid = %s", (lecturer_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Lecturer does not exist'}), 404
 
@@ -442,7 +442,7 @@ def get_calendar_events_for_course(course_code):
         cursor = conn.cursor(dictionary=True)
         try:
             # Fetch regular calendar events
-            cursor.execute("SELECT eventid, eventname, eventdate FROM calendarevents WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT eventid, eventname, eventdate FROM CalendarEvents WHERE coursecode = %s", (course_code,))
             calendar_events_raw = cursor.fetchall()
             
             processed_events = []
@@ -522,8 +522,8 @@ def get_calendar_events_for_student():
         try:
             cursor.execute("""
                 SELECT ce.eventid, ce.eventname, ce.eventdate, ce.coursecode
-                FROM calendarevents ce
-                JOIN enrol e ON ce.coursecode = e.coursecode
+                FROM CalendarEvents ce
+                JOIN Enrol e ON ce.coursecode = e.coursecode
                 WHERE e.userid = %s AND date(ce.eventdate) = %s
             """, (student_id, event_date))
             events = cursor.fetchall()
@@ -561,12 +561,12 @@ def create_calendar_event():
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Course does not exist'}), 404
 
-            cursor.execute("SELECT userid FROM user WHERE userid = %s", (created_by,))
+            cursor.execute("SELECT userid FROM User WHERE userid = %s", (created_by,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Event creator does not exist'}), 404
 
             cursor.execute("""
-                INSERT INTO calendarevents (coursecode, eventname, eventdate, createdby)
+                INSERT INTO CalendarEvents (coursecode, eventname, eventdate, createdby)
                 VALUES (%s, %s, %s, %s)
             """, (course_code, event_name, event_date, created_by))
             conn.commit()
@@ -673,7 +673,7 @@ def get_student_forums(student_id):
                     # Get forums for this course
                     cursor.execute("""
                         SELECT forumid, forumname 
-                        FROM discussionforum 
+                        FROM DiscussionForum 
                         WHERE coursecode = %s
                     """, (course_code,))
                     forums_for_course = cursor.fetchall()
@@ -713,9 +713,9 @@ def get_threads(forum_id):
                 cursor.execute("""
                     SELECT t.threadid, t.threadtitle, t.content, t.createdby, t.createdat, t.updatedat,
                         u.firstname, u.lastname, COALESCE(SUM(v.vote), 0) AS votes
-                    FROM discussionthread t
-                    LEFT JOIN threadvote v ON t.threadid = v.threadid
-                    LEFT JOIN user u ON t.createdby = u.userid
+                    FROM DiscussionThread t
+                    LEFT JOIN ThreadVote v ON t.threadid = v.threadid
+                    LEFT JOIN User u ON t.createdby = u.userid
                     WHERE t.forumid = %s
                     GROUP BY t.threadid
                     ORDER BY votes DESC, t.createdat DESC
@@ -724,9 +724,9 @@ def get_threads(forum_id):
                 cursor.execute("""
                     SELECT t.threadid, t.threadtitle, t.content, t.createdby, t.createdat, t.updatedat,
                         u.firstname, u.lastname, COALESCE(SUM(v.vote), 0) AS votes
-                    FROM discussionthread t
-                    LEFT JOIN threadvote v ON t.threadid = v.threadid
-                    LEFT JOIN user u ON t.createdby = u.userid
+                    FROM DiscussionThread t
+                    LEFT JOIN ThreadVote v ON t.threadid = v.threadid
+                    LEFT JOIN User u ON t.createdby = u.userid
                     WHERE t.forumid = %s
                     GROUP BY t.threadid
                     ORDER BY t.createdat DESC
@@ -758,9 +758,9 @@ def get_thread_replies(thread_id):
             cursor.execute("""
                 SELECT r.replyid, r.parentreplyid, r.content, r.createdby, r.replydate,
                     u.firstname, u.lastname, COALESCE(SUM(rv.vote), 0) AS votes
-                FROM reply r
-                LEFT JOIN replyvote rv ON r.replyid = rv.replyid
-                LEFT JOIN user u ON r.createdby = u.userid
+                FROM Reply r
+                LEFT JOIN ReplyVote rv ON r.replyid = rv.replyid
+                LEFT JOIN User u ON r.createdby = u.userid
                 WHERE r.threadid = %s
                 GROUP BY r.replyid
                 ORDER BY r.replydate ASC
@@ -802,9 +802,9 @@ def get_thread_replies_flat(thread_id):
             cursor.execute("""
                 SELECT r.replyid, r.parentreplyid, r.content, r.createdby, r.replydate,
                     u.firstname, u.lastname, COALESCE(SUM(rv.vote), 0) AS votes
-                FROM reply r
-                LEFT JOIN replyvote rv ON r.replyid = rv.replyid
-                LEFT JOIN user u ON r.createdby = u.userid
+                FROM Reply r
+                LEFT JOIN ReplyVote rv ON r.replyid = rv.replyid
+                LEFT JOIN User u ON r.createdby = u.userid
                 WHERE r.threadid = %s
                 GROUP BY r.replyid
                 ORDER BY r.replydate ASC
@@ -839,7 +839,7 @@ def vote_thread():
         try:
             # Upsert vote
             cursor.execute("""
-                INSERT INTO threadvote (threadid, userid, vote)
+                INSERT INTO ThreadVote (threadid, userid, vote)
                 VALUES (%s, %s, %s)
                 ON DUPLICATE KEY UPDATE vote = %s
             """, (thread_id, user_id, vote, vote))
@@ -874,7 +874,7 @@ def vote_reply():
         try:
             # Upsert vote
             cursor.execute("""
-                INSERT INTO replyvote (replyid, userid, vote)
+                INSERT INTO ReplyVote (replyid, userid, vote)
                 VALUES (%s, %s, %s)
                 ON DUPLICATE KEY UPDATE vote = %s
             """, (reply_id, user_id, vote, vote))
@@ -900,8 +900,8 @@ def get_course_content(course_code):
         try:
             cursor.execute("""
                 SELECT s.sectionid, s.sectiontitle, si.sectionitemid, si.itemtitle, si.link, si.filename, si.description
-                FROM section s
-                LEFT JOIN sectionitem si ON s.sectionid = si.sectionid
+                FROM Section s
+                LEFT JOIN SectionItem si ON s.sectionid = si.sectionid
                 WHERE s.coursecode = %s
             """, (course_code,))
             content = cursor.fetchall()
@@ -936,12 +936,12 @@ def add_course_content():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT sectionid FROM section WHERE sectionid = %s", (section_id,))
+            cursor.execute("SELECT sectionid FROM Section WHERE sectionid = %s", (section_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Section does not exist'}), 404
             
             cursor.execute("""
-                INSERT INTO sectionitem (sectionid, itemtitle, link, filename, description)
+                INSERT INTO SectionItem (sectionid, itemtitle, link, filename, description)
                 VALUES (%s, %s, %s, %s, %s)
             """, (section_id, item_title, link, filename, description))
             conn.commit()
@@ -967,7 +967,7 @@ def get_assignments(course_code):
 
         cursor = conn.cursor(dictionary=True)
         try:
-            cursor.execute("SELECT assignmentid, content, duedate FROM assignment WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT assignmentid, content, duedate FROM Assignment WHERE coursecode = %s", (course_code,))
             assignments = cursor.fetchall()
 
             return jsonify({'courseCode': course_code, 'assignments': assignments}), 200
@@ -998,20 +998,20 @@ def submit_assignment():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+            cursor.execute("SELECT studentid FROM Student WHERE studentid = %s", (student_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'User is not a student'}), 403
 
-            cursor.execute("SELECT assignmentid FROM assignment WHERE assignmentid = %s", (assignment_id,))
+            cursor.execute("SELECT assignmentid FROM Assignment WHERE assignmentid = %s", (assignment_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Assignment does not exist'}), 404
 
-            cursor.execute("SELECT submissionid FROM submission WHERE studentid = %s AND assignmentid = %s", (student_id, assignment_id))
+            cursor.execute("SELECT submissionid FROM Submission WHERE studentid = %s AND assignmentid = %s", (student_id, assignment_id))
             if cursor.fetchone():
                 return jsonify({'error': 'Student has already submitted this assignment'}), 409
 
             cursor.execute("""
-                INSERT INTO submission (studentid, assignmentid, submissioncontent, uploaddate)
+                INSERT INTO Submission (studentid, assignmentid, submissioncontent, uploaddate)
                 VALUES (%s, %s, %s, now())
             """, (student_id, assignment_id, submission_content))
             conn.commit()
@@ -1045,16 +1045,16 @@ def grade_assignment():
 
         cursor = conn.cursor()
         try:
-            cursor.execute("SELECT lecturerid FROM lecturer WHERE lecturerid = %s", (lecturer_id,))
+            cursor.execute("SELECT lecturerid FROM Lecturer WHERE lecturerid = %s", (lecturer_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'User is not a lecturer'}), 403
 
-            cursor.execute("SELECT submissionid FROM submission WHERE submissionid = %s", (submission_id,))
+            cursor.execute("SELECT submissionid FROM Submission WHERE submissionid = %s", (submission_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Submission does not exist'}), 404
 
             cursor.execute("""
-                INSERT INTO grade (submissionid, lecturerid, score)
+                INSERT INTO Grade (submissionid, lecturerid, score)
                 VALUES (%s, %s, %s)
             """, (submission_id, lecturer_id, score))
             conn.commit()
@@ -1080,7 +1080,7 @@ def get_student_grades(student_id):
         cursor = conn.cursor(dictionary=True)
         try:
             # Check if student exists
-            cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+            cursor.execute("SELECT studentid FROM Student WHERE studentid = %s", (student_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Student not found'}), 404
 
@@ -1095,11 +1095,11 @@ def get_student_grades(student_id):
                     s.submissioncontent,
                     s.uploaddate AS submissiondate,
                     g.score
-                FROM enrol e
-                JOIN course c ON e.coursecode = c.coursecode
-                JOIN assignment a ON c.coursecode = a.coursecode
-                LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
-                LEFT JOIN grade g ON s.submissionid = g.submissionid
+                FROM Enrol e
+                JOIN Course c ON e.coursecode = c.coursecode
+                JOIN Assignment a ON c.coursecode = a.coursecode
+                LEFT JOIN Submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
+                LEFT JOIN Grade g ON s.submissionid = g.submissionid
                 WHERE e.userid = %s
                 ORDER BY c.coursecode, a.duedate;
             """
@@ -1123,7 +1123,7 @@ def get_student_assignments_with_submissions(student_id):
         cursor = conn.cursor(dictionary=True)
 
         # First, check if student exists
-        cursor.execute("SELECT studentid FROM student WHERE studentid = %s", (student_id,))
+        cursor.execute("SELECT studentid FROM Student WHERE studentid = %s", (student_id,))
         if cursor.fetchone() is None:
             return jsonify({'error': 'Student not found'}), 404
 
@@ -1140,11 +1140,11 @@ def get_student_assignments_with_submissions(student_id):
                 s.submissioncontent,
                 s.uploaddate AS submission_uploaddate,
                 g.score
-            FROM enrol e
-            JOIN course c ON e.coursecode = c.coursecode
-            JOIN assignment a ON c.coursecode = a.coursecode
-            LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
-            LEFT JOIN grade g ON s.submissionid = g.submissionid
+            FROM Enrol e
+            JOIN Course c ON e.coursecode = c.coursecode
+            JOIN Assignment a ON c.coursecode = a.coursecode
+            LEFT JOIN Submission s ON a.assignmentid = s.assignmentid AND s.studentid = e.userid
+            LEFT JOIN Grade g ON s.submissionid = g.submissionid
             WHERE e.userid = %s
             ORDER BY c.coursecode, a.duedate;
         """
@@ -1212,9 +1212,9 @@ def get_course_assignments_for_student(course_code, student_id):
                 s.submissioncontent,
                 s.uploaddate AS submission_uploaddate,
                 g.score
-            FROM assignment a
+            FROM Assignment a
             LEFT JOIN submission s ON a.assignmentid = s.assignmentid AND s.studentid = %s
-            LEFT JOIN grade g ON s.submissionid = g.submissionid
+            LEFT JOIN Grade g ON s.submissionid = g.submissionid
             WHERE a.coursecode = %s
             ORDER BY a.duedate;
         """
@@ -1261,7 +1261,7 @@ def get_lecturer_course_grades(lecturer_id):
         cursor = conn.cursor(dictionary=True)
         try:
             # Check if lecturer exists
-            cursor.execute("SELECT lecturerid FROM lecturer WHERE lecturerid = %s", (lecturer_id,))
+            cursor.execute("SELECT lecturerid FROM Lecturer WHERE lecturerid = %s", (lecturer_id,))
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Lecturer not found'}), 404
 
@@ -1280,10 +1280,10 @@ def get_lecturer_course_grades(lecturer_id):
                     s.uploaddate AS submissiondate,
                     g.score
                 FROM course c
-                JOIN assignment a ON c.coursecode = a.coursecode
+                JOIN Assignment a ON c.coursecode = a.coursecode
                 LEFT JOIN submission s ON a.assignmentid = s.assignmentid
-                LEFT JOIN user u ON s.studentid = u.userid
-                LEFT JOIN grade g ON s.submissionid = g.submissionid
+                LEFT JOIN User u ON s.studentid = u.userid
+                LEFT JOIN Grade g ON s.submissionid = g.submissionid
                 WHERE c.lecturerid = %s
                 ORDER BY c.coursecode, a.duedate, s.studentid;
             """
@@ -1368,9 +1368,9 @@ def get_busy_lecturers():
         try:
             cursor.execute("""
                 SELECT l.lecturerid, u.firstname, u.lastname, count(c.coursecode) AS course_count
-                FROM lecturer l
-                JOIN user u ON l.lecturerid = u.userid
-                JOIN course c ON l.lecturerid = c.lecturerid
+                FROM Lecturer l
+                JOIN User u ON l.lecturerid = u.userid
+                JOIN Course c ON l.lecturerid = c.lecturerid
                 GROUP BY l.lecturerid
                 HAVING course_count >= 3
             """)
@@ -1398,8 +1398,8 @@ def get_top_courses():
         try:
             cursor.execute("""
                 SELECT c.coursecode, c.coursename, count(e.userid) AS student_count
-                FROM course c
-                JOIN enrol e ON c.coursecode = e.coursecode
+                FROM Course c
+                JOIN Enrol e ON c.coursecode = e.coursecode
                 GROUP BY c.coursecode
                 ORDER BY student_count DESC
                 LIMIT 10
@@ -1428,10 +1428,10 @@ def get_top_students():
         try:
             cursor.execute("""
                 SELECT s.studentid, u.firstname, u.lastname, avg(g.score) AS average_score
-                FROM student s
-                JOIN user u ON s.studentid = u.userid
-                JOIN submission sub ON s.studentid = sub.studentid
-                JOIN grade g ON sub.submissionid = g.submissionid
+                FROM Student s
+                JOIN User u ON s.studentid = u.userid
+                JOIN Submission sub ON s.studentid = sub.studentid
+                JOIN Grade g ON sub.submissionid = g.submissionid
                 GROUP BY s.studentid
                 ORDER BY average_score DESC
                 LIMIT 10
@@ -1459,7 +1459,7 @@ def reply_to_thread():
         "threadId": int,
         "parentReplyId": int or null,
         "content": string,
-        "createdBy": int (user ID)
+        "createdBy": int (User ID)
     }
     """
     try:
@@ -1481,28 +1481,28 @@ def reply_to_thread():
         cursor = conn.cursor(dictionary=True)
         try:
             # Check if thread exists
-            cursor.execute("SELECT threadid FROM discussionthread WHERE threadid = %s", (thread_id,))
+            cursor.execute("SELECT threadid FROM DiscussionThread WHERE threadid = %s", (thread_id,))
             thread = cursor.fetchone()
             if not thread:
                 return jsonify({'error': 'Thread not found'}), 404
             
             # Check if parent reply exists (if provided)
             if parent_reply_id:
-                cursor.execute("SELECT replyid FROM reply WHERE replyid = %s AND threadid = %s", 
+                cursor.execute("SELECT replyid FROM Reply WHERE replyid = %s AND threadid = %s", 
                                (parent_reply_id, thread_id))
                 parent_reply = cursor.fetchone()
                 if not parent_reply:
                     return jsonify({'error': 'Parent reply not found or does not belong to this thread'}), 404
             
-            # Check if user exists
-            cursor.execute("SELECT userid FROM user WHERE userid = %s", (created_by,))
-            user = cursor.fetchone()
-            if not user:
+            # Check if User exists
+            cursor.execute("SELECT userid FROM User WHERE userid = %s", (created_by,))
+            User = cursor.fetchone()
+            if not User:
                 return jsonify({'error': 'User not found'}), 404
             
             # Insert the reply
             insert_query = """
-                INSERT INTO reply (threadid, parentreplyid, content, createdby, replydate)
+                INSERT INTO Reply (threadid, parentreplyid, content, createdby, replydate)
                 VALUES (%s, %s, %s, %s, NOW())
             """
             cursor.execute(insert_query, (thread_id, parent_reply_id, content, created_by))

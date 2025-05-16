@@ -63,7 +63,7 @@ const AssignmentsPage: React.FC<AssignmentsPageProps> = ({ userId, userType }) =
     setError(null);
     try {
       // Use the new consolidated endpoint with full URL
-      const response = await fetch(`http://localhost:5000/assignments/student/${userId}`); 
+      const response = await fetch(`http://134.199.222.77:5000/assignments/student/${userId}`); 
       if (!response.ok) {
         let errorText = response.statusText;
         try {

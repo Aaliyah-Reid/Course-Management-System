@@ -68,35 +68,35 @@ const ReportsPage: React.FC<ReportsPageProps> = ({ userId, userType }) => {
       
       try {
         // Fetch popular courses (50+ students)
-        const popularCoursesResponse = await fetch('http://localhost:5000/reports/popular_courses');
+        const popularCoursesResponse = await fetch('http://134.199.222.77:5000/reports/popular_courses');
         if (!popularCoursesResponse.ok) throw new Error(`Failed to fetch popular courses: ${popularCoursesResponse.statusText}`);
         const popularCoursesData = await popularCoursesResponse.json();
         console.log('Popular courses data:', popularCoursesData);
         setPopularCourses(popularCoursesData.popularCourses || []);
 
         // Fetch active students (5+ courses)
-        const activeStudentsResponse = await fetch('http://localhost:5000/reports/active_students');
+        const activeStudentsResponse = await fetch('http://134.199.222.77:5000/reports/active_students');
         if (!activeStudentsResponse.ok) throw new Error(`Failed to fetch active students: ${activeStudentsResponse.statusText}`);
         const activeStudentsData = await activeStudentsResponse.json();
         console.log('Active students data:', activeStudentsData);
         setActiveStudents(activeStudentsData.activeStudents || []);
 
         // Fetch busy lecturers (3+ courses)
-        const busyLecturersResponse = await fetch('http://localhost:5000/reports/busy_lecturers');
+        const busyLecturersResponse = await fetch('http://134.199.222.77:5000/reports/busy_lecturers');
         if (!busyLecturersResponse.ok) throw new Error(`Failed to fetch busy lecturers: ${busyLecturersResponse.statusText}`);
         const busyLecturersData = await busyLecturersResponse.json();
         console.log('Busy lecturers data:', busyLecturersData);
         setBusyLecturers(busyLecturersData.busyLecturers || []);
 
         // Fetch top 10 enrolled courses
-        const topCoursesResponse = await fetch('http://localhost:5000/reports/top_courses');
+        const topCoursesResponse = await fetch('http://134.199.222.77:5000/reports/top_courses');
         if (!topCoursesResponse.ok) throw new Error(`Failed to fetch top courses: ${topCoursesResponse.statusText}`);
         const topCoursesData = await topCoursesResponse.json();
         console.log('Top courses data:', topCoursesData);
         setTopCourses(topCoursesData.topEnrolledCourses || []);
 
         // Fetch top 10 students by average
-        const topStudentsResponse = await fetch('http://localhost:5000/reports/top_students');
+        const topStudentsResponse = await fetch('http://134.199.222.77:5000/reports/top_students');
         if (!topStudentsResponse.ok) throw new Error(`Failed to fetch top students: ${topStudentsResponse.statusText}`);
         const topStudentsData = await topStudentsResponse.json();
         console.log('Top students data:', topStudentsData);

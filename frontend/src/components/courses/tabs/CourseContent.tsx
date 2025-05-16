@@ -63,7 +63,7 @@ const CourseContent: React.FC<CourseContentProps> = ({ courseCode }) => {
     const fetchContent = async () => {
       try {
         setIsLoadingSections(true);
-        const response = await fetch(`http://localhost:5000/course_content/${courseCode}`);
+        const response = await fetch(`http://134.199.222.77:5000/course_content/${courseCode}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status} for course content`);
         }
@@ -82,7 +82,7 @@ const CourseContent: React.FC<CourseContentProps> = ({ courseCode }) => {
     const fetchEvents = async () => {
       try {
         setIsLoadingEvents(true);
-        const response = await fetch(`http://localhost:5000/calendar_events/course/${courseCode}`);
+        const response = await fetch(`http://134.199.222.77:5000/calendar_events/course/${courseCode}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status} for course events`);
         }

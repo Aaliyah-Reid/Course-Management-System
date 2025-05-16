@@ -182,7 +182,7 @@ const ThreadView: React.FC<ThreadViewProps> = ({ initialThread, currentUser, onB
     setIsLoadingReplies(true);
     setErrorReplies(null);
     try {
-      const response = await fetch(`http://localhost:5000/thread/${thread.id}/replies`);
+      const response = await fetch(`http://134.199.222.77:5000/thread/${thread.id}/replies`);
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({})); 
         throw new Error(errorData.error || `Failed to fetch replies: ${response.statusText}`);
@@ -203,7 +203,7 @@ const ThreadView: React.FC<ThreadViewProps> = ({ initialThread, currentUser, onB
 
   const handleVote = async (type: 'thread' | 'reply', id: number, vote: 1 | -1) => {
     if (!currentUserIdAsNumber) { alert('You must be logged in to vote.'); return; }
-    const endpoint = type === 'thread' ? 'http://localhost:5000/vote/thread' : 'http://localhost:5000/vote/reply';
+    const endpoint = type === 'thread' ? 'http://134.199.222.77:5000/vote/thread' : 'http://134.199.222.77:5000/vote/reply';
     const payload = type === 'thread' ? { threadId: id, userId: currentUserIdAsNumber, vote } : { replyId: id, userId: currentUserIdAsNumber, vote };
     try {
       const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
@@ -223,7 +223,7 @@ const ThreadView: React.FC<ThreadViewProps> = ({ initialThread, currentUser, onB
   const handlePostReply = async (content: string, parentReplyId?: number) => {
     if (!currentUserIdAsNumber || !thread?.id) { alert('User not logged in or thread ID missing. Cannot post reply.'); return; }
     try {
-      const response = await fetch('http://localhost:5000/reply_thread', {
+      const response = await fetch('http://134.199.222.77:5000/reply_thread', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ threadId: thread.id, parentReplyId: parentReplyId || null, content, createdBy: currentUserIdAsNumber }),
       });
