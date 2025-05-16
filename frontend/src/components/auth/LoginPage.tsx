@@ -16,7 +16,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     setError(undefined);
     
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('http://134.199.222.77:5000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

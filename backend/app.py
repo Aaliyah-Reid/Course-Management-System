@@ -121,7 +121,7 @@ def login():
             return jsonify({'error': 'Database connection failed'}), 500
         cursor = conn.cursor(dictionary=True)  
         try:
-            cursor.execute("SELECT userid, password FROM user WHERE userid = %s", (user_id,))
+            cursor.execute("SELECT userid, password FROM User WHERE userid = %s", (user_id,))
             user = cursor.fetchone()
 
             if user and user.get('password') == hashlib.sha256(password.encode('utf-8')).hexdigest():
