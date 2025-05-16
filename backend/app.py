@@ -337,17 +337,17 @@ def assign_lecturer():
             if cursor.fetchone() is None:
                 return jsonify({'error': 'Lecturer does not exist'}), 404
 
-            cursor.execute("SELECT COUNT(*) FROM course WHERE lecturerid = %s", (lecturer_id,))
+            cursor.execute("SELECT COUNT(*) FROM Course WHERE lecturerid = %s", (lecturer_id,))
             lecturer_course_count = cursor.fetchone()[0]
             if lecturer_course_count >= 5:
                 return jsonify({'error': 'Lecturer cannot be assigned to more than 5 courses'}), 403
 
-            cursor.execute("SELECT lecturerid FROM course WHERE coursecode = %s", (course_code,))
+            cursor.execute("SELECT lecturerid FROM Course WHERE coursecode = %s", (course_code,))
             assigned_lecturer = cursor.fetchone()
             if assigned_lecturer and assigned_lecturer[0] is not None:
                 return jsonify({'error': 'Course already has an assigned lecturer'}), 409
 
-            cursor.execute("UPDATE course SET lecturerid = %s WHERE coursecode = %s", (lecturer_id, course_code))
+            cursor.execute("UPDATE Course SET lecturerid = %s WHERE coursecode = %s", (lecturer_id, course_code))
             conn.commit()
             return jsonify({'message': 'Lecturer successfully assigned'}), 200
 
