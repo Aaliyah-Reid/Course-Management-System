@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { LoginFormData, LoginFormErrors } from '../../types/auth';
 import { validateLoginForm } from '../../utils/validation';
 import { saveLoginPreferences, getSavedLoginPreferences } from '../../utils/storage';
@@ -16,7 +16,7 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, isLoading = false, error }) => {
   const [formData, setFormData] = useState<LoginFormData>({
-    email: '',
+    userId: '',
     password: '',
     rememberMe: false
   });
@@ -29,7 +29,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, isLoading = false, erro
     if (savedPreferences.rememberMe) {
       setFormData((prev) => ({
         ...prev,
-        email: savedPreferences.email,
+        userId: savedPreferences.userId,
         rememberMe: true
       }));
     }
@@ -37,18 +37,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, isLoading = false, erro
 
   const handleChange = (field: keyof LoginFormData) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-    setFormData({ ...formData, [field]: value });
+    const newFormData = { ...formData, [field]: value };
+    setFormData(newFormData);
     
-    if (touched[field]) {
-      const newErrors = validateLoginForm({ ...formData, [field]: value });
-      setErrors((prev) => ({ ...prev, [field]: newErrors[field] }));
+    if (touched[field] && field !== 'rememberMe') {
+      const validationErrors = validateLoginForm(newFormData);
+      setErrors(validationErrors);
     }
   };
 
-  const handleBlur = (field: keyof LoginFormData) => () => {
-    setTouched({ ...touched, [field]: true });
-    const newErrors = validateLoginForm(formData);
-    setErrors((prev) => ({ ...prev, [field]: newErrors[field] }));
+  const handleBlur = (field: keyof Omit<LoginFormData, 'rememberMe'>) => () => {
+    setTouched((prevTouched) => ({ ...prevTouched, [field]: true }));
+    const validationErrors = validateLoginForm(formData);
+    setErrors(validationErrors);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -57,35 +58,34 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, isLoading = false, erro
     const newErrors = validateLoginForm(formData);
     setErrors(newErrors);
     setTouched({
-      email: true,
+      userId: true,
       password: true,
-      rememberMe: true
     });
     
     if (Object.keys(newErrors).length === 0) {
       if (formData.rememberMe) {
-        saveLoginPreferences(formData.email, true);
+        saveLoginPreferences(formData.userId, true);
       }
       
       onSubmit(formData);
     }
   };
 
-  const isFormValid = Object.keys(errors).length === 0 && formData.email && formData.password;
+  const isFormValid = Object.keys(errors).length === 0 && formData.userId && formData.password;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <Input
-        label="Email address"
-        type="email"
-        placeholder="your.email@example.com"
-        value={formData.email}
-        onChange={handleChange('email')}
-        onBlur={handleBlur('email')}
-        error={errors.email}
-        leftIcon={<EnvelopeIcon className="h-5 w-5" />}
+        label="User ID"
+        type="text"
+        placeholder="Enter your User ID"
+        value={formData.userId}
+        onChange={handleChange('userId')}
+        onBlur={handleBlur('userId')}
+        error={errors.userId}
+        leftIcon={<UserCircleIcon className="h-5 w-5" />}
         required
-        autoComplete="email"
+        autoComplete="username"
         autoFocus
       />
       

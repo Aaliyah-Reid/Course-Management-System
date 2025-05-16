@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import CourseGrid from './CourseGrid';
 import { Course } from '../../types/course';
+import { UserType } from '../../types/user';
+
+// Define UserType at a more accessible place if used across multiple files, or import from App.tsx if exported
+// type UserType = 'student' | 'lecturer' | 'admin' | null;
 
 interface CoursesPageProps {
   onCourseSelect: (course: Course) => void;
+  userId: string | null;
+  userType: UserType | null;
 }
 
-const CoursesPage: React.FC<CoursesPageProps> = ({ onCourseSelect }) => {
+const CoursesPage: React.FC<CoursesPageProps> = ({ onCourseSelect, userId, userType }) => {
   const [isGridView, setIsGridView] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortBy, setSortBy] = useState<'name' | 'code' | 'lastAccessed'>('lastAccessed');
+  const [sortBy, setSortBy] = useState<'name' | 'code'>('name');
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -29,6 +35,8 @@ const CoursesPage: React.FC<CoursesPageProps> = ({ onCourseSelect }) => {
         onSortChange={setSortBy}
         onSearchChange={setSearchQuery}
         onCourseSelect={onCourseSelect}
+        userId={userId}
+        userType={userType}
       />
     </div>
   );

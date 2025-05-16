@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { Bell, GraduationCap, Sun, Moon } from 'lucide-react';
+import { GraduationCap, Sun, Moon } from 'lucide-react';
 import {
   ChartBarIcon,
   CalendarIcon,
@@ -15,6 +15,8 @@ interface HeaderProps {
   onNavigate: (page: 'dashboard' | 'courses' | 'forums' | 'assignments' | 'profile' | 'grades' | 'calendar' | 'reports' | 'preferences') => void;
   currentPage: 'dashboard' | 'courses' | 'forums' | 'assignments' | 'profile' | 'grades' | 'calendar' | 'reports' | 'preferences';
   onLogout: () => void;
+  firstName?: string | null;
+  lastName?: string | null;
 }
 
 const userNavigation = [
@@ -26,10 +28,15 @@ const userNavigation = [
   { name: 'Log Out', page: 'logout', icon: ArrowRightOnRectangleIcon },
 ];
 
-const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage, onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage, onLogout, firstName, lastName }) => {
   const { mode, setMode } = useThemeStore();
-  const unreadNotifications = 3;
-  const userInitials = 'JD';
+  
+  let userInitials = 'LMS';
+  if (firstName && lastName) {
+    userInitials = `${firstName[0]}${lastName[0]}`.toUpperCase();
+  } else if (firstName) {
+    userInitials = `${firstName.substring(0, 2)}`.toUpperCase();
+  }
 
   const navigation = [
     { name: 'Dashboard', onClick: () => onNavigate('dashboard'), current: currentPage === 'dashboard' },
@@ -90,19 +97,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage, onLogout }) =>
                 <Moon className="h-5 w-5 text-theme-text" />
               ) : (
                 <Sun className="h-5 w-5 text-theme-text" />
-              )}
-            </button>
-
-            <button
-              type="button"
-              className="relative rounded-full p-1 text-theme-text hover:text-theme-primary focus:outline-none focus:ring-2 focus:ring-theme-secondary"
-            >
-              <span className="absolute -inset-1.5" />
-              <Bell className="h-6 w-6" />
-              {unreadNotifications > 0 && (
-                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-red-500 flex items-center justify-center">
-                  <span className="text-xs font-medium text-white">{unreadNotifications}</span>
-                </span>
               )}
             </button>
 

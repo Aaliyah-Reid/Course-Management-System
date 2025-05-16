@@ -145,11 +145,19 @@
       }
     },
     {
-      "name": "Get Forums",
+      "name": "Get Forums for Course",
       "request": {
         "method": "GET",
         "header": [],
         "url": { "raw": "http://localhost:5000/forums/COMP3540", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "COMP3540"] }
+      }
+    },
+    {
+      "name": "Get Forums for Student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/forums/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["forums", "student", "620200001"] }
       }
     },
     {
@@ -289,6 +297,22 @@
       }
     },
     {
+      "name": "Get Student Assignments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/assignments/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "student", "620200001"] }
+      }
+    },
+    {
+      "name": "Get Course Assignments for Student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5000/assignments/course/COMP3540/student/620200001", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["assignments", "course", "COMP3540", "student", "620200001"] }
+      }
+    },
+    {
       "name": "Submit Assignment",
       "request": {
         "method": "POST",
@@ -350,6 +374,34 @@
         "method": "GET",
         "header": [],
         "url": { "raw": "http://localhost:5000/reports/top_students", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["reports", "top_students"] }
+      }
+    },
+    {
+      "name": "Get Student Grades",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { 
+          "raw": "http://localhost:5000/student/620100000/grades", 
+          "protocol": "http", 
+          "host": ["localhost"], 
+          "port": "5000", 
+          "path": ["student", "620100000", "grades"] 
+        }
+      }
+    },
+    {
+      "name": "Get Lecturer Course Grades",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { 
+          "raw": "http://localhost:5000/lecturer/300000000/course_grades", 
+          "protocol": "http", 
+          "host": ["localhost"], 
+          "port": "5000", 
+          "path": ["lecturer", "300000000", "course_grades"] 
+        }
       }
     }
   ]

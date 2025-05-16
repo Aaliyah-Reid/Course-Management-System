@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import { LoginFormData } from '../../types/auth';
 
 interface LoginPageProps {
-  onLoginSuccess: () => void;
+  onLoginSuccess: (userId: string) => void;
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
@@ -16,14 +16,29 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     setError(undefined);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      if (data.email === 'demo@example.com' && data.password === 'password123') {
-        console.log('Login successful', data);
-        onLoginSuccess();
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: data.userId, password: data.password }),
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        console.log('Login successful', responseData);
+        // Store user data/token as needed
+        // The backend sends { message: string, userId: number (or string) }
+        // Make sure responseData.userId is a string if your onLoginSuccess expects a string.
+        const fetchedUserId = responseData.userId ? responseData.userId.toString() : '';
+        if (fetchedUserId) {
+            onLoginSuccess(fetchedUserId);
+        } else {
+            setError('Login successful, but User ID was not returned.');
+        }
       } else {
-        setError('Invalid email or password. Please try again.');
+        setError(responseData.error || 'Login failed. Please try again.');
       }
     } catch (err) {
       setError('An error occurred. Please try again later.');

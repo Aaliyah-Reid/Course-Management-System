@@ -1,154 +1,182 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ForumList from './ForumList';
 import ThreadList from './ThreadList';
 import ThreadView from './ThreadView';
-import { Forum, Thread, Reply } from '../../types/forum';
+import { Forum, Thread } from '../../types/forum';
+import { User } from '../../types/user'; // Assuming User type includes id and userType
+import { Course } from '../../types/course.ts'; // Ensure .ts is used if your setup requires it, or remove if not.
 
-// Mock data - replace with actual data from your backend
-const mockForums: Forum[] = [
-  { id: 1, courseCode: 'CS101', name: 'General Discussion' },
-  { id: 2, courseCode: 'CS101', name: 'Assignment Help' },
-];
+interface ForumPageProps {
+  currentUser: User | null;
+}
 
-const mockThreads: Thread[] = [
-  {
-    id: 1,
-    forumId: 1,
-    title: 'Welcome to the Course',
-    content: 'Welcome everyone! Use this space to introduce yourself.',
-    createdBy: {
-      id: 1,
-      name: 'John Smith',
-      avatar: null,
-    },
-    createdAt: '2024-03-15T10:00:00Z',
-    updatedAt: '2024-03-15T10:00:00Z',
-    voteCount: 42,
-    userVote: null,
-    replyCount: 2,
-  },
-];
+type ViewState =
+  | { type: 'courseList' }
+  | { type: 'forums'; selectedCourse: Course }
+  | { type: 'threads'; selectedForum: Forum; selectedCourse: Course }
+  | { type: 'thread'; selectedThread: Thread; selectedForum: Forum; selectedCourse: Course };
 
-const mockReplies: Reply[] = [
-  {
-    id: 1,
-    threadId: 1,
-    parentReplyId: null,
-    content: 'Hello everyone! Looking forward to learning with you all.',
-    createdBy: {
-      id: 2,
-      name: 'Jane Doe',
-      avatar: null,
-    },
-    createdAt: '2024-03-15T12:00:00Z',
-    voteCount: 15,
-    userVote: null,
-    replies: [
-      {
-        id: 2,
-        threadId: 1,
-        parentReplyId: 1,
-        content: 'Welcome to the course!',
-        createdBy: {
-          id: 3,
-          name: 'Alice Johnson',
-          avatar: null,
-        },
-        createdAt: '2024-03-15T12:30:00Z',
-        voteCount: 8,
-        userVote: null,
-        replies: [],
-      },
-    ],
-  },
-];
+const ForumPage: React.FC<ForumPageProps> = ({ currentUser }) => {
+  const [currentView, setCurrentView] = useState<ViewState>({ type: 'courseList' });
+  const [userCourses, setUserCourses] = useState<Course[]>([]);
+  const [isLoadingCourses, setIsLoadingCourses] = useState<boolean>(false);
+  const [errorCourses, setErrorCourses] = useState<string | null>(null);
 
-type View = 'forums' | { type: 'threads'; forum: Forum } | { type: 'thread'; thread: Thread };
+  useEffect(() => {
+    if (!currentUser) {
+      setUserCourses([]);
+      setCurrentView({ type: 'courseList' }); // Or handle as appropriate
+      return;
+    }
 
-const ForumPage: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>('forums');
-  const [threads, setThreads] = useState(mockThreads);
-  const [replies, setReplies] = useState(mockReplies);
+    const fetchUserCourses = async () => {
+      setIsLoadingCourses(true);
+      setErrorCourses(null);
+      let coursesUrl = '';
+      if (currentUser.userType === 'student') {
+        coursesUrl = `http://localhost:5000/courses/student/${currentUser.id}`;
+      } else if (currentUser.userType === 'lecturer') {
+        coursesUrl = `http://localhost:5000/courses/lecturer/${currentUser.id}`;
+      } else {
+        // Admins might see all courses or a different view, handle as needed
+        // For now, let's assume admins don't use this page this way or show no courses
+        setIsLoadingCourses(false);
+        setUserCourses([]);
+        // Optionally set an error or message for admins
+        // setErrorCourses("Forum view by course is not applicable for admins here.");
+        return;
+      }
+
+      try {
+        const response = await fetch(coursesUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch courses: ${response.statusText}`);
+        }
+        const data = await response.json();
+        // API for student: { studentCourses: Course[] }
+        // API for lecturer: { lecturerCourses: Course[] }
+        // The Course type expects coursecode and coursename (all lowercase)
+        const courses: Course[] = data.studentCourses || data.lecturerCourses || [];
+        setUserCourses(courses);
+      } catch (err) {
+        setErrorCourses(err instanceof Error ? err.message : 'An unknown error occurred fetching courses');
+        setUserCourses([]);
+      } finally {
+        setIsLoadingCourses(false);
+      }
+    };
+
+    fetchUserCourses();
+  }, [currentUser]);
+
+  const handleCourseSelect = (course: Course) => {
+    setCurrentView({ type: 'forums', selectedCourse: course });
+  };
 
   const handleForumSelect = (forum: Forum) => {
-    setCurrentView({ type: 'threads', forum });
-  };
-
-  const handleThreadSelect = (thread: Thread) => {
-    setCurrentView({ type: 'thread', thread });
-  };
-
-  const handleBack = () => {
-    if (typeof currentView === 'string') return;
-    setCurrentView(currentView.type === 'threads' ? 'forums' : { 
-      type: 'threads', 
-      forum: mockForums.find(f => f.id === (currentView.thread as Thread).forumId)! 
-    });
-  };
-
-  const handleReply = (content: string, parentReplyId?: number) => {
-    // Implement reply logic here
-    console.log('Reply:', { content, parentReplyId });
-  };
-
-  const handleVote = (type: 'thread' | 'reply', id: number, value: 1 | -1) => {
-    if (type === 'thread') {
-      setThreads(threads.map(thread => {
-        if (thread.id === id) {
-          const oldValue = thread.userVote || 0;
-          const newValue = oldValue === value ? 0 : value;
-          return {
-            ...thread,
-            voteCount: thread.voteCount - oldValue + newValue,
-            userVote: newValue || null,
-          };
-        }
-        return thread;
-      }));
-    } else {
-      const updateReplyVotes = (replyList: Reply[]): Reply[] => {
-        return replyList.map(reply => {
-          if (reply.id === id) {
-            const oldValue = reply.userVote || 0;
-            const newValue = oldValue === value ? 0 : value;
-            return {
-              ...reply,
-              voteCount: reply.voteCount - oldValue + newValue,
-              userVote: newValue || null,
-            };
-          }
-          return {
-            ...reply,
-            replies: updateReplyVotes(reply.replies),
-          };
-        });
-      };
-      
-      setReplies(updateReplyVotes(replies));
+    if (currentView.type === 'forums') {
+      setCurrentView({ type: 'threads', selectedForum: forum, selectedCourse: currentView.selectedCourse });
     }
   };
 
+  const handleThreadSelect = (thread: Thread) => {
+    if (currentView.type === 'threads') {
+      setCurrentView({ type: 'thread', selectedThread: thread, selectedForum: currentView.selectedForum, selectedCourse: currentView.selectedCourse });
+    }
+  };
+
+  const handleBack = () => {
+    switch (currentView.type) {
+      case 'thread':
+        setCurrentView({ type: 'threads', selectedForum: currentView.selectedForum, selectedCourse: currentView.selectedCourse });
+        break;
+      case 'threads':
+        setCurrentView({ type: 'forums', selectedCourse: currentView.selectedCourse });
+        break;
+      case 'forums':
+        setCurrentView({ type: 'courseList' });
+        break;
+      case 'courseList':
+      default:
+        break;
+    }
+  };
+
+  let content;
+  if (!currentUser) {
+    content = <p className="text-theme-text text-center py-4">Please log in to view forums.</p>;
+  } else {
+    switch (currentView.type) {
+      case 'courseList':
+        if (isLoadingCourses) {
+          content = <p className="text-theme-text text-center py-4">Loading your courses...</p>;
+        } else if (errorCourses) {
+          content = <p className="text-red-500 text-center py-4">Error: {errorCourses}</p>;
+        } else if (userCourses.length === 0) {
+          content = <p className="text-theme-text/70 text-center py-4">No courses found for you to display forums.</p>;
+        } else {
+          content = (
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-theme-text mb-4">Your Courses</h2>
+              {userCourses.map((course) => (
+                <div
+                  key={course.coursecode}
+                  onClick={() => handleCourseSelect(course)}
+                  className="bg-theme-card p-4 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer border border-theme-primary/20"
+                >
+                  <h3 className="text-lg font-medium text-theme-text">{course.coursename}</h3>
+                  <p className="text-sm text-theme-text/80">{course.coursecode}</p>
+                </div>
+              ))}
+            </div>
+          );
+        }
+        break;
+      case 'forums':
+        content = (
+          <>
+            <button onClick={handleBack} className="mb-4 text-sm text-theme-accent hover:underline">
+              &larr; Back to Courses
+            </button>
+            <h2 className="text-xl font-semibold text-theme-text mb-4">Forums for {currentView.selectedCourse.coursename}</h2>
+            <ForumList
+              courseCode={currentView.selectedCourse.coursecode}
+              onForumSelect={handleForumSelect}
+              userId={currentUser.id}
+              userType={currentUser.userType}
+            />
+          </>
+        );
+        break;
+      case 'threads':
+        content = (
+          <ThreadList
+            forum={currentView.selectedForum}
+            currentUser={currentUser}
+            onThreadSelect={handleThreadSelect}
+            onBack={handleBack} // Back from threads goes to forums of the selectedCourse
+          />
+        );
+        break;
+      case 'thread':
+        content = (
+          <ThreadView
+            initialThread={currentView.selectedThread}
+            currentUser={currentUser}
+            onBack={handleBack} // Back from a thread goes to its threadlist
+          />
+        );
+        break;
+      default:
+        content = <p>Error: Unknown view state.</p>;
+    }
+  }
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-theme-background theme-transition">
-      {currentView === 'forums' ? (
-        <ForumList forums={mockForums} onForumSelect={handleForumSelect} />
-      ) : currentView.type === 'threads' ? (
-        <ThreadList
-          threads={threads.filter(t => t.forumId === currentView.forum.id)}
-          forumName={currentView.forum.name}
-          onThreadSelect={handleThreadSelect}
-          onBack={handleBack}
-          onVote={(threadId, value) => handleVote('thread', threadId, value)}
-        />
-      ) : (
-        <ThreadView
-          thread={currentView.thread}
-          replies={replies}
-          onBack={handleBack}
-          onReply={handleReply}
-          onVote={handleVote}
-        />
-      )}
+    <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6 py-6 bg-theme-background min-h-[calc(100vh-150px)]">
+      {/* General page header, could be dynamic */}
+      {/* <h1 className="text-2xl font-bold text-theme-text mb-6">Discussion Forums</h1> */}
+      {content}
     </div>
   );
 };

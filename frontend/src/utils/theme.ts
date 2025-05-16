@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-export type ThemeName = 'default' | 'calm' | 'subtle' | 'neon' | 'mature';
+export type ThemeName = 'default' | 'calm' | 'subtle' | 'neon' | 'mature' | 'ocean';
 export type ThemeMode = 'light' | 'dark';
 
 interface ThemeState {
